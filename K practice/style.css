@@ -1,0 +1,35 @@
+/*All colors from SU style guide 
+#FFFFFF
+#000000
+#FFCD00
+#828282
+*/
+
+
+body {
+    background-color: #FFFFFF;
+  }
+
+p {
+  color: #000000;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+  }
+
+h1 { /* both links are h1 & a?? or p?*/
+  color: #FFCD00;
+  text-align: center;
+}
+
+a {
+  color: #FFCD00;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
