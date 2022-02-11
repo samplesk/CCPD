@@ -52,3 +52,8 @@ img {
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
+
+b {
+  color: #000000;
+  text-align: left;
+}
