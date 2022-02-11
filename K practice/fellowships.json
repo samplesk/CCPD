@@ -17,18 +17,53 @@
         "id": "3",
         "name":"Boren Awards",
         "website":"https://borenawards.org/",
-        "level_of_study":"Undergraduate, Graduate",
+        "level_of_study":"Undergraduate or Graduate",
         "location":"Abroad"
-    }
+    },
     {
-        "id": "3",
-        "name":"Boren Awards",
-        "website":"https://borenawards.org/",
-        "level_of_study":"Undergraduate, Graduate",
+        "id": "4",
+        "name":"Charles B. Rangel Graduate Fellowship",
+        "website":"http://rangelprogram.org/graduate-fellowship-program/",
+        "level_of_study":"Graduate",
+        "location":"Domestic"
+    },
+    {
+        "id": "5",
+        "name":"Critical Language Scholarship",
+        "website":"https://clscholarship.org/",
+        "level_of_study":"Undergraduate",
         "location":"Abroad"
-    }
+    },
     {
-        "id": "3",
+        "id": "6",
+        "name":"Ford Foundation Predoctoral Fellowships",
+        "website":"https://sites.nationalacademies.org/PGA/FordFellowships/PGA_171962",
+        "level_of_study":"Graduate",
+        "location":"Domestic"
+    },
+    {
+        "id": "7",
+        "name":"Gates Cambridge Scholarship",
+        "website":"https://civi.gatescambridge.org/",
+        "level_of_study":"Graduate",
+        "location":"Abroad"
+    },
+    {
+        "id": "8",
+        "name":"George J. Mitchell Scholarship",
+        "website":"https://www.us-irelandalliance.org/mitchellscholarship",
+        "level_of_study":"Graduate",
+        "location":"Abroad"
+    },
+    {
+        "id": "9",
+        "name":"Harry S. Truman Scholarship",
+        "website":"https://www.truman.gov/candidates",
+        "level_of_study":"Graduate",
+        "location":"Domestic"
+    },
+    {
+        "id": "10",
         "name":"Boren Awards",
         "website":"https://borenawards.org/",
         "level_of_study":"Undergraduate, Graduate",

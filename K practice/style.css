@@ -57,3 +57,8 @@ b {
   color: #000000;
   text-align: left;
 }
+
+th{
+  margin-left: 200px;
+  padding-left: 200px;
+}
