@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "name":"Barry Goldwater Scholarship",
+        "website":"https://goldwater.scholarsapply.org/",
+        "level_of_study":"Undergraduate",
+        "location":"Domestic"
+    },
+    {
+        "id": "2",
+        "name":"Benjamin A. Gilman International Scholarship",
+        "website":"https://www.iie.org/programs/gilman-scholarship-program",
+        "level_of_study":"Undergraduate",
+        "location":"Abroad"
+    },
+    {
+        "id": "3",
+        "name":"Boren Awards",
+        "website":"https://borenawards.org/",
+        "level_of_study":"Undergraduate, Graduate",
+        "location":"Abroad"
+    }
+    {
+        "id": "3",
+        "name":"Boren Awards",
+        "website":"https://borenawards.org/",
+        "level_of_study":"Undergraduate, Graduate",
+        "location":"Abroad"
+    }
+    {
+        "id": "3",
+        "name":"Boren Awards",
+        "website":"https://borenawards.org/",
+        "level_of_study":"Undergraduate, Graduate",
+        "location":"Abroad"
+    }
+  ]
