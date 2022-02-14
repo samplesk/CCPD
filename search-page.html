@@ -1,126 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sample Home</title>
+    <title>Browse</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
+<link rel="stylesheet" href="search-page.css" />
+<link rel="stylesheet" href="navigation-bar.css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(139, 134, 134);
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+<script src="search-page.js"></script>
 
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+<script>    
+   $(document).ready(function(){                  
+       $.getJSON("meals.json", function(data) {           
+           //loads JSON data               
+           $("button").click(function () { //Select the DOM ojbect clicked then attaches the index value to the meals array 
+               var index = $("button").index(this);               
+               var conArray = ["#con1", "#con2", "#con3"];                             
+               $(conArray[index]).html("what meat: " + data.meals[index].meat + "<br /> what vege: " + data.meals[index].vege + "<br /> what desert: " + data.meals[index].desert);                    
+           });       
+       });
+   });
+</script>
 
-.sidebar a:hover {
-  color: #f1f1f1;
-}
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
 
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color: #444;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color: #555;
-}
-
-.collapsible:after {
-  content: '\002B';
-  color: white;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2212";
-}
-
-.content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-}
-</style>
 </head>
 <body>
 
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="search-page.html">Browse Fellowships</a></li>
+    <li><a href="https://www.southwestern.edu/academics/fellowships-scholarships/">CCPD Fellowship Site</a></li>
+    <li><a href="#contact">Contact CCPD</a></li>
+  </ul>
+
 <div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#">Filter Results</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+
 
   <button class="collapsible">GPA</button>
   <div id="GPA" class="content">
-    <input type="checkbox" id="gpa1" name="gpa1" value="2.0+">
+    <input type="checkbox" id="gpa1" name="gpa1" value="2.0">
     <label for="gpa1">2.0+</label><br>
-    <input type="checkbox" id="gpa2" name="gpa2" value="2.5+">
+    <input type="checkbox" id="gpa2" name="gpa2" value="2.5">
     <label for="gpa2">2.5+</label><br>
-    <input type="checkbox" id="gpa3" name="gpa3" value="3.0+">
-    <label for="gpa1">3.0+</label><br>
-    <input type="checkbox" id="gpa4" name="gpa4" value="3.5+">
-    <label for="gpa1">3.5+</label><br>
-    <input type="checkbox" id="gpa5" name="gpa5" value="3.7+">
-    <label for="gpa1">3.7+</label><br>
+    <input type="checkbox" id="gpa3" name="gpa3" value="3.0">
+    <label for="gpa3">3.0+</label><br>
+    <input type="checkbox" id="gpa4" name="gpa4" value="3.5">
+    <label for="gpa4">3.5+</label><br>
+    <input type="checkbox" id="gpa5" name="gpa5" value="3.7">
+    <label for="gpa5">3.7+</label><br>
 </div>
   <button class="collapsible">Grade Level</button>
   <div id="min_grade_level" class="content">
@@ -144,8 +77,11 @@ body {
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">☰</button>  
-  <h2>Collapsed Sidebar</h2>
+  <h2>Search Fellowships</h2>
   <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+
+  <div id="fellowship-accordion"></div>
+
 </div>
 
 <script>
@@ -174,6 +110,5 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
-   
 </body>
 </html> 

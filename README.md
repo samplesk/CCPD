@@ -27,3 +27,41 @@ https://www.youtube.com/watch?v=AOfSuajwY-I <----->
       }
     }
 }
+
+  <button class="closebtn" onclick="closeNav()">×</button>  
+
+  		const layout = new dhx.Layout("layout", {
+			type: "line",
+			rows: [
+				{
+					resizable: true,
+					cols: [
+						{
+							id: "sidebar",
+							header: "Filter",
+							collapsable: true,
+							width: "225px",
+							resizable: true
+						},
+						{
+							id: "content",
+							header: "Fellowships",
+							resizable: true
+						}
+
+					]
+				}
+			]
+		});
+
+
+    const listData = [
+        { value: "Margarit Taline" },
+        { value: "Artur Garegin" },
+        { value: "Hikari Walter" },
+        { value: "Stephanie Tasha" },
+        { value: "Sabine Gustaf" },
+        { value: "Alwin Jockel" },
+        { value: "Kinge Varduhi" },
+        { value: "Moriko Ryota" },
+        { value: "Eduard Timo" }
