@@ -2,17 +2,29 @@
     <head>
         <title>
             Fellowships webpage
+            <link rel="icon" type="image/jpg" href="#">
         </title>
+        <h1 style="color:#FFCD00;text-decoration: underline;text-align: center;font-size: 400%;">
+            Fellowship Opportunities
+        </h1>
+        <img src="https://www.southwestern.edu/live/image/gid/40/width/238/height/121/26761_icon_center_stacked.rev.1516746430.png" alt="SU icon" style="width: 235px;
+        height: 133px;
+        left: 14px;
+        top: 9px;
+        align-items: left;
+        position: absolute;">
         <body style="color: #000000;">
-            <h1 style="color:#FFCD00;text-decoration: underline;">
-                Fellowships
-            </h1>
-            Temporary fellowships page for CCPD
-            <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search.." title="Type in a category" style="position: absolute; top: 50px; right: 50;">
+            <div class="vl"></div>
+            <h2 style="color: #000000;text-align: center;">
+                Temporary fellowships page for CCPD
+            </h2>
+            <hr style="min-width: 100%; height: 5px;background-color: #000000;position: relative;">
+            </body>
+            <input type="text" id="searchBar" onkeyup="searchFunction()" placeholder="Search.." title="Type in a category" style="position: absolute; top: 50px; right: 50px;">
 
-            <ul id="fellowshipMenu" style="">
-              <li><a href="#">abcd 1</a></li>
-              <li><a href="#">bcde 2</a></li>
+            <ul id="fellowshipMenu" style="text-align: center;">
+              <li><a href="https://goldwater.scholarsapply.org/">Barry Goldwater Scholarship</a></li>
+              <li><a href="https://www.iie.org/programs/gilman-scholarship-program">Benjamin A. Gilman International Scholarship</a></li>
               <li><a href="#">cdef 3</a></li>
               <li><a href="#">defj 4</a></li>
               <li><a href="#">efjk 5</a></li>
@@ -22,28 +34,28 @@
               <li><a href="#">lmno 9</a></li>
             </ul>
             </input>
-            <table>
-                <tr>
-                    <td style="color: #000000;padding: 50px;">
-                        Row 1 - Column 1
-                    </td>
-                    <td style="color:#000000;padding: 50px;">
-                        Row 1 - Column 2
-                    </td>
-                </tr>
-                <tr>
-                    <td style="color: #000000;padding: 50px;">
-                        Row 2 - Column 1
-                    </td>
-                    <td style=padding:50px;>
-                        Row 2 - Column 2
-                    </td>
-                </tr>
-            </table>
-            Placement test
         </body>
     </head>
 </html>
+<style>
+    ul{
+        text-align: center;
+        list-style-position: inside;
+        list-style-type: none;
+    }
+    li{
+        text-align: center;
+    }
+    .vl{
+     width: 5px;
+     background-color: #000000;
+     height:100%;
+     position:absolute;
+     left: 15%;
+     top:10px;
+
+    }
+</style>
 <script>
     function searchFunction() {
       // Declare variables
