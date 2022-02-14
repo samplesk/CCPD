@@ -8,6 +8,20 @@
                 Fellowships
             </h1>
             Temporary fellowships page for CCPD
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category" style="position: absolute; top: 50px; right: 50;">
+
+            <ul id="myMenu" style="">
+              <li><a href="#">abcd 1</a></li>
+              <li><a href="#">bcde 2</a></li>
+              <li><a href="#">cdef 3</a></li>
+              <li><a href="#">defj 4</a></li>
+              <li><a href="#">efjk 5</a></li>
+              <li><a href="#">fjkl 6</a></li>
+              <li><a href="#">jklm 7</a></li>
+              <li><a href="#">klmn 8</a></li>
+              <li><a href="#">lmno 9</a></li>
+            </ul>
+            </input>
             <table>
                 <tr>
                     <td style="color: #000000;padding: 50px;">
@@ -29,36 +43,23 @@
             Placement test
         </body>
     </head>
-    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-
-<ul id="myMenu">
-  <li><a href="#">abcd 1</a></li>
-  <li><a href="#">bcde 2</a></li>
-  <li><a href="#">cdef 3</a></li>
-  <li><a href="#">defj 4</a></li>
-  <li><a href="#">efjk 5</a></li>
-  <li><a href="#">fjkl 6</a></li>
-  <li><a href="#">jklm 7</a></li>
-  <li><a href="#">klmn 8</a></li>
-  <li><a href="#">lmno 9</a></li>
-</ul>
 </html>
 <script>
     function myFunction() {
       // Declare variables
-      var input, filter, ul, li, a, i;
-      input = document.getElementById("mySearch");
-      filter = input.value.toUpperCase();
-      ul = document.getElementById("myMenu");
-      li = ul.getElementsByTagName("li");
+      var input, filter, ul, li, a, i; // variables 
+      input = document.getElementById("mySearch"); // get element in search bar
+      filter = input.value.toUpperCase(); // put all values to upper case
+      ul = document.getElementById("myMenu"); // get elements in menu
+      li = ul.getElementsByTagName("li"); // get tag name of elements in menu
     
       // Loop through all list items, and hide those who don't match the search query
-      for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
+      for (i = 0; i < li.length; i++) { // for all items less than the length of the tag name list
+        a = li[i].getElementsByTagName("a")[0]; // get letters at position in specific element 
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) { // if it isnt within our search, i.e. the letter isnt in the element
+          li[i].style.display = ""; // make display empty
         } else {
-          li[i].style.display = "none";
+          li[i].style.display = "none"; // otherwise leave the display as is
         }
       }
     }
