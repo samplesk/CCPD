@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sample Search</title>
+    <title>Browse</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="search-page.css" />
+<link rel="stylesheet" href="navigation-bar.css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="search-page.js"></script>
+
+<script>    
+   $(document).ready(function(){                  
+       $.getJSON("meals.json", function(data) {           
+           //loads JSON data               
+           $("button").click(function () { //Select the DOM ojbect clicked then attaches the index value to the meals array 
+               var index = $("button").index(this);               
+               var conArray = ["#con1", "#con2", "#con3"];                             
+               $(conArray[index]).html("what meat: " + data.meals[index].meat + "<br /> what vege: " + data.meals[index].vege + "<br /> what desert: " + data.meals[index].desert);                    
+           });       
+       });
+   });
+</script>
+
+
 
 </head>
 <body>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="search-page.html">Browse Fellowships</a></li>
+    <li><a href="https://www.southwestern.edu/academics/fellowships-scholarships/">CCPD Fellowship Site</a></li>
+    <li><a href="#contact">Contact CCPD</a></li>
+  </ul>
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -50,6 +79,9 @@
   <button class="openbtn" onclick="openNav()">☰</button>  
   <h2>Search Fellowships</h2>
   <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+
+  <div id="fellowship-accordion"></div>
+
 </div>
 
 <script>
@@ -78,6 +110,5 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
-   
 </body>
 </html> 

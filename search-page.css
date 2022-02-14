@@ -1,7 +1,13 @@
+/*SU White: #FFFFFF */
+/*SU Black: #000000  */
+/*SU Grey:  #828282*/
+/*SU Yellow:  #FFCD00*/
+
 body {
     font-family: "Lato", sans-serif;
   }
   
+/*Sidebar */
   .sidebar {
     height: 100%;
     width: 0;
@@ -64,7 +70,8 @@ body {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
   }
-  
+
+  /*Collapsible/Hamburger*/
   .collapsible {
     background-color: #777;
     color: white;
@@ -100,3 +107,4 @@ body {
     transition: max-height 0.2s ease-out;
     background-color: #f1f1f1;
   }
+
