@@ -1,0 +1,156 @@
+/*SU White: #FFFFFF */
+/*SU Black: #000000  */
+/*SU Grey:  #828282*/
+/*SU Yellow:  #FFCD00*/
+
+/*body {
+    font-family: "Lato", sans-serif;
+  }*/
+
+  @font-face {
+    font-family: HKGrotesk_regular;
+    src: url(fonts/HKGrotesk/HKGrotesk-Regular.otf);
+  }
+  @font-face {
+    font-family: HKGrotesk_bold;
+    src: url(fonts/HKGrotesk/HKGrotesk-Bold.otf);
+  }
+
+  @font-face {
+    font-family: HKGrotesk_light;
+    src: url(fonts/HKGrotesk/HKGrotesk-Light.otf);
+  }
+
+  @font-face {
+    font-family: Playfair;
+    src: url(fonts/playfair/PlayfairDisplaySC-Regular.otf);
+  }
+
+  @font-face {
+    font-family: HKGrotesk_light_italic;
+    src: url(fonts/HKGrotesk/HKGrotesk-LightItalic.otf);
+  }
+  
+  p {
+    font-family: HKGrotesk_light;
+  }
+
+  h2{
+    font-family:HKGrotesk_bold,Arial,sans-serif;
+    font-size: 20px;
+
+  }
+
+  h3{
+    font-family: HKGrotesk_light_italic;
+    font-size: 15px;
+  }
+
+  h4{
+    font-family: HKGrotesk_regular;
+  }
+/*  #fellowship-accordion {
+    font-family: HKGrotesk_regular;
+  }
+*/ 
+/*Sidebar */
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #828282;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #828282;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  h2 {
+    margin: 0;
+    display: inline-block;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+  /*Collapsible/Hamburger*/
+  .collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+

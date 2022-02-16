@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="search-page.css" />
+<link rel="stylesheet" href="navigation-bar.css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+<script src="search-page.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="search-page.html">Browse Fellowships</a></li>
+    <li><a href="https://www.southwestern.edu/academics/fellowships-scholarships/">CCPD Fellowship Site</a></li>
+    <li><a href="#contact">Contact CCPD</a></li>
+  </ul>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+
+
+  <button class="collapsible">GPA</button>
+  <div id="GPA" class="content">
+    <input type="checkbox" id="gpa1" name="gpa1" value="2.0">
+    <label for="gpa1">2.0+</label><br>
+    <input type="checkbox" id="gpa2" name="gpa2" value="2.5">
+    <label for="gpa2">2.5+</label><br>
+    <input type="checkbox" id="gpa3" name="gpa3" value="3.0">
+    <label for="gpa3">3.0+</label><br>
+    <input type="checkbox" id="gpa4" name="gpa4" value="3.5">
+    <label for="gpa4">3.5+</label><br>
+    <input type="checkbox" id="gpa5" name="gpa5" value="3.7">
+    <label for="gpa5">3.7+</label><br>
+</div>
+  <button class="collapsible">Grade Level</button>
+  <div id="min_grade_level" class="content">
+    <input type="checkbox" id="gradeLevel1" name="gradeLevel1" value="1">
+    <label for="gradeLevel1">1st-year/Freshman</label><br>
+    <input type="checkbox" id="gradeLevel2" name="gradeLevel2" value="2">
+    <label for="gradeLevel2">2nd-year/Sophomore</label><br>
+    <input type="checkbox" id="gradeLevel3" name="gradeLevel3" value="3">
+    <label for="gradeLevel3">3rd-year/Junior</label><br>
+    <input type="checkbox" id="gradeLevel4" name="gradeLevel4" value="4">
+    <label for="gradeLevel4">4th-year/Senior</label><br>
+</div>
+  <button class="collapsible">Location</button>
+  <div id="location" class="content">
+    <input type="checkbox" id="location1" name="location1" value="Domestic">
+    <label for="location1">Domestic</label><br>
+    <input type="checkbox" id="location2" name="location2" value="International">
+    <label for="location2">International</label><br>
+  </div>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>  
+  <h2>Search Fellowships</h2>
+  <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+
+  <div id="fellowship-accordion"></div>
+
+</div>
+
+<script>
+    function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+  
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+</script>
+</body>
+</html> 
