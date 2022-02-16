@@ -3,10 +3,56 @@
 /*SU Grey:  #828282*/
 /*SU Yellow:  #FFCD00*/
 
-body {
+/*body {
     font-family: "Lato", sans-serif;
+  }*/
+
+  @font-face {
+    font-family: HKGrotesk_regular;
+    src: url(fonts/HKGrotesk/HKGrotesk-Regular.otf);
+  }
+  @font-face {
+    font-family: HKGrotesk_bold;
+    src: url(fonts/HKGrotesk/HKGrotesk-Bold.otf);
+  }
+
+  @font-face {
+    font-family: HKGrotesk_light;
+    src: url(fonts/HKGrotesk/HKGrotesk-Light.otf);
+  }
+
+  @font-face {
+    font-family: Playfair;
+    src: url(fonts/playfair/PlayfairDisplaySC-Regular.otf);
+  }
+
+  @font-face {
+    font-family: HKGrotesk_light_italic;
+    src: url(fonts/HKGrotesk/HKGrotesk-LightItalic.otf);
   }
   
+  p {
+    font-family: HKGrotesk_light;
+  }
+
+  h2{
+    font-family:HKGrotesk_bold,Arial,sans-serif;
+    font-size: 20px;
+
+  }
+
+  h3{
+    font-family: HKGrotesk_light_italic;
+    font-size: 15px;
+  }
+
+  h4{
+    font-family: HKGrotesk_regular;
+  }
+/*  #fellowship-accordion {
+    font-family: HKGrotesk_regular;
+  }
+*/ 
 /*Sidebar */
   .sidebar {
     height: 100%;

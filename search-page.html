@@ -8,24 +8,8 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <script src="search-page.js"></script>
-
-<script>    
-   $(document).ready(function(){                  
-       $.getJSON("meals.json", function(data) {           
-           //loads JSON data               
-           $("button").click(function () { //Select the DOM ojbect clicked then attaches the index value to the meals array 
-               var index = $("button").index(this);               
-               var conArray = ["#con1", "#con2", "#con3"];                             
-               $(conArray[index]).html("what meat: " + data.meals[index].meat + "<br /> what vege: " + data.meals[index].vege + "<br /> what desert: " + data.meals[index].desert);                    
-           });       
-       });
-   });
-</script>
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>
 <body>
@@ -85,30 +69,30 @@
 </div>
 
 <script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
-}
+    function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+  
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
 </script>
 </body>
 </html> 

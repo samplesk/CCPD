@@ -34,7 +34,7 @@ var data = [
   
   console.log(fellowships)
   var html = $.map(fellowships, function(body, fellowship) {
-  return "<h3>" + fellowship + "</h3>" +
+  return "<h2>" + fellowship + "</h2>" +
     "<div>" + $.map(body, function(item, i) {
         console.log(i, item)
         return format(item)
@@ -45,11 +45,11 @@ var data = [
   return "<div>" + $.map(item, function(line, key) {
     var div = ""
     if(line == item.description)
-        div += "<p>" + line + "</p>"
+        div += "<h3>" + line + "</h3>"
     else if (line == item.website)
-        div += "<a href="+ encodeURI(line)+">Visit</a></p>"
+        div += "<p><a href="+ encodeURI(line)+">Visit</a></p>"
     else if(line != item.id && line != item.name)
-        div += "<h4>"+key+ "</h4><div>"+line +"</div>"
+        div += "<h4>"+key+ "</h4><div><p>"+line +"</p></div>"
   
     
     return div
