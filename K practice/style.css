@@ -53,12 +53,12 @@ img {
   padding-top: 20px;
 }
 
-b {
+b { /* sidebar style*/
   color: #000000;
   text-align: left;
 }
 
-th{
+th{ /* JSON styling*/
   margin-left: 200px;
   padding-left: 200px;
 }
