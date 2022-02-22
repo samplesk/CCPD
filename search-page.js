@@ -1,3 +1,4 @@
+// fellowship json stored in js variable
 var data = [
   {
    "name": "Barry Goldwater Scholarship",
@@ -401,64 +402,114 @@ var data = [
   }
  ];
 
-var data1 = [
-  {
-  "id": "1",
-  "name":"Barry Goldwater Scholarship",
-  "description":"National scholarship in the natural sciences, engineering and mathematics to identify and support college sophomores and juniors who show exceptional promise of becoming the US’ next generation of research leaders in these fields. Scholarships entail up to $7,500 a year to help cover costs associated with tuition, mandatory fees, books, room and board.",
-  "website":"https://goldwater.scholarsapply.org/",
-  "level_of_study":"Undergraduate",
-  "location":"Domestic"
-  },
-  {
-  "id": "2",
-  "name":"Benjamin A. Gilman International Scholarship",
-  "description":"The U.S. Department of State’s Benjamin A. Gilman International Scholarship is a grant program that enables students of limited financial means to study or intern abroad, thereby gaining skills critical to our national security and economic competitiveness.",
-  "website":"https://www.iie.org/programs/gilman-scholarship-program",
-  "level_of_study":"Undergraduate",
-  "location":"Abroad"
-  },
-  {
-  "id": "3",
-  "name":"Boren Awards",
-  "description":"The Boren Scholarships fund intensive study of language and culture abroad by U.S. undergraduate students (25+ weeks preferred) and the Boren Fellowships fund language study by graduate students.",
-  "website":"https://borenawards.org/",
-  "level_of_study":"Undergraduate, Graduate",
-  "location":"Abroad"
-  }
-  ];
+ /*creates fellowship dictionary with each fellowship name 
+  as the key and then attaches the fellowship 
+  information to each fellowship name (like a hash table)
+  Does NOT display on page
+  */
   var fellowships = {}
   data.forEach(function(item) {
   if(!(item.name in fellowships))
-    fellowships[item.name] = [item]
+    fellowships[item.name] = [item] // adds new fellowship name to array
   else
-    fellowships[item.name].push(item)
+      fellowships[item.name].push(item) // adds the information for that fellowship
   })
   
+
+  
+ /*Dictionaries that contain all fellowship keys, 
+ and the name you actually want it to be labeled as on the web page
+ Different dictionaries will be used in different quadrants in format method.
+  */
+  var newFellowshipSpecialKeys = {
+    "description": "Description",
+    "website": "Website"
+  }
+
+  var newFellowshipRequirementKeys = {
+    "gpa": "Minimum GPA",
+    "age": "Minimum Age",
+    "citizenship": "US Citizen/National/Permanent Resident",
+    "requires_campus_endorsement_nomination": "Requires Campus Endorsement or Nomination",
+  }
+
+  var newFellowshipDetailKeys = {
+    "level_of_study": "Level Of Study",
+    "field_of_study_interests": "Field of Study or Interests",
+    "location_of_study": "Location of Study",
+    "specific_location": "Specific Location",
+  }
+
+  var newFellowshipOtherKeys = {
+    "other" : "Other Details/Requirements"
+  }
+  
+  /*creates outer accordion layer:
+    creates an expandable drop down object for each fellowship.
+    content inside each fellowship object is still empty at this point.
+    Does display on page
+  */
   console.log(fellowships)
   var html = $.map(fellowships, function(body, fellowship) {
-  return "<h2>" + fellowship + "</h2>" +
+  return "<h2>" + fellowship + "</h2>" + // fellowship name header
     "<div>" + $.map(body, function(item, i) {
         console.log(i, item)
         return format(item)
     }).join("") + "</div>"
   }).join("")
   
+  /*Creates inner accordion layer:
+  seperates the inner accordion layer into different rows/columns
+  depending on the type of content that needs to be displayed in that specific quadrant
+  */
   function format(item){
-  return "<div>" + $.map(item, function(line, key) {
-    var div = ""
-    if(line == item.description)
-        div += "<h3>" + line + "</h3>"
-    else if (line == item.website)
-        div += "<p><a href="+ encodeURI(line)+">Visit</a></p>"
-    else if(line != item.id && line != item.name)
-        div += "<h4>"+key+ "</h4><div><p>"+line +"</p></div>"
-  
+    var formatted_item = ""
+    formatted_item += "<div>"
     
-    return div
-  }).join("") + "</div>"
+    formatted_item += "<div class='row'>"
+    formatted_item += "<div>" + sectionFormat(newFellowshipSpecialKeys, item) +"</div>"
+    formatted_item += "</div>"
+
+    formatted_item += "<div class='row'>"
+    formatted_item += "<div class='column'><h2>Details</h2>" + sectionFormat(newFellowshipDetailKeys, item) +"</div>"
+    formatted_item += "<div class='column'> <h2>Requirements</h2>" +sectionFormat(newFellowshipRequirementKeys, item)+ "</div>"
+    formatted_item += "</div>"
+
+    formatted_item += "<div class='row'>"
+    formatted_item += "<div>" + "<h2>Other Details and Requirements</h2>"+ sectionFormat(newFellowshipOtherKeys, item) +"</div>"
+    formatted_item += "</div>"
+
+    formatted_item += "</div>"
+    return formatted_item
   }
   
+  /*Fills inner accordion layer:
+    grabs the content for each fellowship from the fellowship 
+    hashtable and adds it into the empty fellowship content object.
+    content inside each fellowship object is no longer empty at this point.
+    Does display on page.
+  */
+  function sectionFormat(newFellowshipKeys, item){
+    return $.map(item, function(line, key) {
+      var fellowship_details = ""
+      if((key in newFellowshipKeys) && line != null){
+        if(key == "description")
+          fellowship_details += "<h3>" + line + "</h3>"
+        else if (key == "website")
+          fellowship_details += "<p><a href="+ encodeURI(line)+">Visit</a></p>"
+        else if(key != "other")
+          fellowship_details += "<h4>"+newFellowshipKeys[key]+ "</h4><div><p>"+line +"</p></div>"
+        else
+          fellowship_details += "</h4><div><p>"+line +"</p></div>"
+      }
+      
+      return fellowship_details
+    }).join("")
+    }
+  
+  /*Attaches outer and inner layer to each other to create complete accordion object.
+  Places accordion object to fellowship-accordion div placeholder from search-page.html.
+  */
   $(function(){
   console.log(html)
   $("#fellowship-accordion").append(html)
@@ -466,28 +517,3 @@ var data1 = [
   $("#fellowship-accordion").accordion()
   })
   console.log(html)
-//--------------------------------------------------------------------------------
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-  }
-  
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-  
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight){
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      } 
-    });
-  }
