@@ -464,7 +464,7 @@ var data = [
   */
   function format(item){
     var formatted_item = ""
-    formatted_item += "<div>"
+    formatted_item += "<div class = 'inner_accordion_layer'>"
     
     formatted_item += "<div class='row'>"
     formatted_item += "<div>" + sectionFormat(newFellowshipSpecialKeys, item) +"</div>"
@@ -476,7 +476,7 @@ var data = [
     formatted_item += "</div>"
 
     formatted_item += "<div class='row'>"
-    formatted_item += "<div>" + "<h2>Other Details and Requirements</h2>"+ sectionFormat(newFellowshipOtherKeys, item) +"</div>"
+    formatted_item += "<div>" + sectionFormat(newFellowshipOtherKeys, item) +"</div>"
     formatted_item += "</div>"
 
     formatted_item += "</div>"
@@ -500,7 +500,7 @@ var data = [
         else if(key != "other")
           fellowship_details += "<h4>"+newFellowshipKeys[key]+ "</h4><div><p>"+line +"</p></div>"
         else
-          fellowship_details += "</h4><div><p>"+line +"</p></div>"
+          fellowship_details += "<h2>Other Details and Requirements</h2>"+ "</h4><div><p>"+line +"</p></div>"
       }
       
       return fellowship_details
@@ -510,10 +510,14 @@ var data = [
   /*Attaches outer and inner layer to each other to create complete accordion object.
   Places accordion object to fellowship-accordion div placeholder from search-page.html.
   */
+ // USED: https://jqueryui.com/accordion/ for accordion functions/interactions
   $(function(){
   console.log(html)
   $("#fellowship-accordion").append(html)
   //$("#fellowship-accordion").children("div").accordion()
-  $("#fellowship-accordion").accordion()
+  $("#fellowship-accordion").accordion({
+      collapsible: true,
+      heightStyle: "content"
+  })
   })
   console.log(html)
