@@ -23,3 +23,12 @@ ul {
   li a:hover {
     background-color: #828282;
   }
+
+  /* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
