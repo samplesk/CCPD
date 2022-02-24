@@ -31,14 +31,23 @@
     src: url(fonts/HKGrotesk/HKGrotesk-LightItalic.otf);
   }
   
-  p {
-    font-family: HKGrotesk_light;
+  p { /* click icon for sidebar*/
+    font-size: 16px;
+    font-family: "Playfair Display","Times New Roman",serif;
+    font-weight: 400;
+    color: #828282;
   }
 
-  h2{
-    font-family:HKGrotesk_bold,Arial,sans-serif;
-    font-size: 20px;
+  p1{
+    font-size: 14px;
+    font-family: "HK Grotesk",Arial,sans-serif;
+    font-weight: 400;
+  }
 
+  h2{ /*Search Fellowship */
+    font-size: 24px;
+    font-family: "Playfair Display","Times New Roman",serif;
+    font-weight: 400;
   }
 
   h3{
@@ -46,8 +55,10 @@
     font-size: 15px;
   }
 
-  h4{
-    font-family: HKGrotesk_regular;
+  h4{ /* sectio header*/
+    font-family: "HK Grotesk",Arial,sans-serif;
+    font-weight: 700;
+    font-size: 18px;
   }
 /*  #fellowship-accordion {
     font-family: HKGrotesk_regular;

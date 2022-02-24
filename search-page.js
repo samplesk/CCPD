@@ -93,9 +93,9 @@ var data = [
     if(line == item.description)
         div += "<h3>" + line + "</h3>"
     else if (line == item.website)
-        div += "<p><a href="+ encodeURI(line)+">Visit</a></p>"
+        div += "<h4><a href="+ encodeURI(line)+">Visit</a></h4>"
     else if(line != item.id && line != item.name)
-        div += "<h4>"+key+ "</h4><div><p>"+line +"</p></div>"
+        div += "<h4>"+key+ "</h4><div><p1>"+line +"</p1></div>"
   
     
     return div
