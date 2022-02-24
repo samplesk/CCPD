@@ -1,29 +1,75 @@
 var data = [
-  {
-  "id": "1",
-  "name":"Barry Goldwater Scholarship",
-  "description":"National scholarship in the natural sciences, engineering and mathematics to identify and support college sophomores and juniors who show exceptional promise of becoming the US’ next generation of research leaders in these fields. Scholarships entail up to $7,500 a year to help cover costs associated with tuition, mandatory fees, books, room and board.",
-  "website":"https://goldwater.scholarsapply.org/",
-  "level_of_study":"Undergraduate",
-  "location":"Domestic"
-  },
-  {
-  "id": "2",
-  "name":"Benjamin A. Gilman International Scholarship",
-  "description":"The U.S. Department of State’s Benjamin A. Gilman International Scholarship is a grant program that enables students of limited financial means to study or intern abroad, thereby gaining skills critical to our national security and economic competitiveness.",
-  "website":"https://www.iie.org/programs/gilman-scholarship-program",
-  "level_of_study":"Undergraduate",
-  "location":"Abroad"
-  },
-  {
-  "id": "3",
-  "name":"Boren Awards",
-  "description":"The Boren Scholarships fund intensive study of language and culture abroad by U.S. undergraduate students (25+ weeks preferred) and the Boren Fellowships fund language study by graduate students.",
-  "website":"https://borenawards.org/",
-  "level_of_study":"Undergraduate, Graduate",
-  "location":"Abroad"
-  }
-  ];
+    {
+        "id": "1",
+        "name":"Barry Goldwater Scholarship",
+        "website":"https://goldwater.scholarsapply.org/",
+        "level_of_study":"Undergraduate",
+        "location":"Domestic"
+    },
+    {
+        "id": "2",
+        "name":"Benjamin A. Gilman International Scholarship",
+        "website":"https://www.iie.org/programs/gilman-scholarship-program",
+        "level_of_study":"Undergraduate",
+        "location":"Abroad"
+    },
+    {
+        "id": "3",
+        "name":"Boren Awards",
+        "website":"https://borenawards.org/",
+        "level_of_study":"Undergraduate or Graduate",
+        "location":"Abroad"
+    },
+    {
+        "id": "4",
+        "name":"Charles B. Rangel Graduate Fellowship",
+        "website":"http://rangelprogram.org/graduate-fellowship-program/",
+        "level_of_study":"Graduate",
+        "location":"Domestic"
+    },
+    {
+        "id": "5",
+        "name":"Critical Language Scholarship",
+        "website":"https://clscholarship.org/",
+        "level_of_study":"Undergraduate",
+        "location":"Abroad"
+    },
+    {
+        "id": "6",
+        "name":"Ford Foundation Predoctoral Fellowships",
+        "website":"https://sites.nationalacademies.org/PGA/FordFellowships/PGA_171962",
+        "level_of_study":"Graduate",
+        "location":"Domestic"
+    },
+    {
+        "id": "7",
+        "name":"Gates Cambridge Scholarship",
+        "website":"https://civi.gatescambridge.org/",
+        "level_of_study":"Graduate",
+        "location":"Abroad"
+    },
+    {
+        "id": "8",
+        "name":"George J. Mitchell Scholarship",
+        "website":"https://www.us-irelandalliance.org/mitchellscholarship",
+        "level_of_study":"Graduate",
+        "location":"Abroad"
+    },
+    {
+        "id": "9",
+        "name":"Harry S. Truman Scholarship",
+        "website":"https://www.truman.gov/candidates",
+        "level_of_study":"Graduate",
+        "location":"Domestic"
+    },
+    {
+        "id": "10",
+        "name":"Boren Awards",
+        "website":"https://borenawards.org/",
+        "level_of_study":"Undergraduate, Graduate",
+        "location":"Abroad"
+    }
+  ]
   var fellowships = {}
   data.forEach(function(item) {
   if(!(item.name in fellowships))
