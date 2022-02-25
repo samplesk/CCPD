@@ -40,6 +40,7 @@ h2 {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  transition: 0s;
 }
 
 .openbtn {
