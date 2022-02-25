@@ -1,3 +1,4 @@
+
 /*Sidebar */
 .sidebar {
   height: 100%;
@@ -23,11 +24,6 @@
 
 .sidebar a:hover {
   color: #f1f1f1;
-}
-
-h2 {
-  margin: 0;
-  display: inline-block;
 }
 
 .sidebar .closebtn {

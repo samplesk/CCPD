@@ -31,32 +31,40 @@
     src: url(fonts/HKGrotesk/HKGrotesk-LightItalic.otf);
   }
   
-  p { /* click icon for sidebar*/
+  p { /*fellowship details*/
     font-size: 16px;
     font-family: "Playfair Display","Times New Roman",serif;
     font-weight: 400;
-    color: #828282;
   }
 
-  p1{
-    font-size: 14px;
-    font-family: "HK Grotesk",Arial,sans-serif;
+  p1{ /* website */
+    font-size: 16px;
+    font-family: "Playfair Display","Times New Roman",serif;
     font-weight: 400;
+    color: #000000;
   }
 
-  h2{ /*Search Fellowship */
+  h2{ /*fellowship name header, Search Felowships*/
     font-size: 24px;
     font-family: "Playfair Display","Times New Roman",serif;
     font-weight: 400;
   }
 
-  h3{
-    font-family: HKGrotesk_light_italic;
-    font-size: 15px;
+  h3{ /*fellowship description*/
+    font-size: 18px;
+    font-family: "Playfair Display","Times New Roman",serif;
+    font-weight: 400;
+    color: #828282;
   }
 
-  h4{ /* sectio header*/
+  h4{ /*section header of fellowship details*/
     font-family: "HK Grotesk",Arial,sans-serif;
     font-weight: 700;
     font-size: 18px;
+  }
+
+  h5{ /*Details, Requirements*/
+    font-size: 18px;
+    font-family: "Playfair Display","Times New Roman",serif;
+    font-weight: 400;
   }

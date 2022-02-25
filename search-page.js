@@ -471,8 +471,8 @@ var data = [
     formatted_item += "</div>"
 
     formatted_item += "<div class='row'>"
-    formatted_item += "<div class='column'><h2>Details</h2>" + sectionFormat(newFellowshipDetailKeys, item) +"</div>"
-    formatted_item += "<div class='column'> <h2>Requirements</h2>" +sectionFormat(newFellowshipRequirementKeys, item)+ "</div>"
+    formatted_item += "<div class='column'><h5>Details</h5>" + sectionFormat(newFellowshipDetailKeys, item) +"</div>"
+    formatted_item += "<div class='column'> <h5>Requirements</h5>" +sectionFormat(newFellowshipRequirementKeys, item)+ "</div>"
     formatted_item += "</div>"
 
     formatted_item += "<div class='row'>"
@@ -496,11 +496,11 @@ var data = [
         if(key == "description")
           fellowship_details += "<h3>" + line + "</h3>"
         else if (key == "website")
-          fellowship_details += "<p><a href="+ encodeURI(line)+">Visit</a></p>"
+          fellowship_details += "<p1><a href="+ encodeURI(line)+">Visit</a></p1>"
         else if(key != "other")
           fellowship_details += "<h4>"+newFellowshipKeys[key]+ "</h4><div><p>"+line +"</p></div>"
         else
-          fellowship_details += "<h2>Other Details and Requirements</h2>"+ "</h4><div><p>"+line +"</p></div>"
+          fellowship_details += "<h4>Other Details and Requirements</p>"+ "</h4><div><p>"+line +"</p></div>"
       }
       
       return fellowship_details
