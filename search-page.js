@@ -451,7 +451,7 @@ var data = [
   */
   console.log(fellowships)
   var html = $.map(fellowships, function(body, fellowship) {
-  return "<h2>" + fellowship + "</h2>" + // fellowship name header
+  return "<h6>" + fellowship + "</h6>" + // fellowship name header
     "<div>" + $.map(body, function(item, i) {
         console.log(i, item)
         return format(item)
