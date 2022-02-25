@@ -34,6 +34,7 @@ h2 {
   display: inline-block;
 }
 
+/* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
   top: 0;
@@ -41,7 +42,7 @@ h2 {
   font-size: 36px;
   margin-left: 50px;
   transition: 0s;
-}
+  }
 
 .openbtn {
   font-size: 20px;
