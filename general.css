@@ -38,7 +38,7 @@ sub- or category-headlines. */
   }
 
   p1{ /* website */
-    font-size: 16px;
+    font-size: 18px;
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
     font-weight: 400;
     color: #000000;
@@ -47,9 +47,9 @@ sub- or category-headlines. */
  /*h2 = Search Felowships in sidebar.css*/
 
   h3{ /*fellowship description*/
-    font-size: 18px;
+    font-size: 16px;
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
-    font-weight: 400;
+    font-weight: 350;
     color: #828282;
   }
 
@@ -61,10 +61,11 @@ sub- or category-headlines. */
   }
 
   h5{ /*Details, Requirements*/
-    font-size: 18px;
+    font-size: 20px;
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
-    font-weight: 400;
+    font-weight: bold;
     color: #000000;
+    text-align: left;
   }
 
   h1{ /* fellowship name*/
@@ -73,3 +74,5 @@ sub- or category-headlines. */
     font-weight: 400;
     color: #000000;
   }
+
+

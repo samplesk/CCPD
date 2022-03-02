@@ -517,6 +517,7 @@ var data = [
   //$("#fellowship-accordion").children("div").accordion()
   $("#fellowship-accordion").accordion({
       collapsible: true,
+      active: false,
       heightStyle: "content"
   })
   })
