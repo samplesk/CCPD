@@ -44,6 +44,13 @@ sub- or category-headlines. */
     color: #000000;
   }
 
+  h1{ /* fellowship name*/
+    font-size: 18px;
+    font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
+    font-weight: 400;
+    color: #000000;
+  }
+
  /*h2 = Search Felowships in sidebar.css*/
 
   h3{ /*fellowship description*/
@@ -67,12 +74,3 @@ sub- or category-headlines. */
     color: #000000;
     text-align: left;
   }
-
-  h1{ /* fellowship name*/
-    font-size: 18px;
-    font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
-    font-weight: 400;
-    color: #000000;
-  }
-
-
