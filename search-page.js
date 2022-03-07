@@ -496,7 +496,7 @@ var data = [
         if(key == "description")
           fellowship_details += "<h3>" + line + "</h3>"
         else if (key == "website")
-          fellowship_details += "<p1><a href="+ encodeURI(line)+">Visit</a></p1>"
+          fellowship_details += "<p>"+ "Visit: "+ line +"</p>"
         else if(key != "other")
           fellowship_details += "<h4>"+newFellowshipKeys[key]+ "</h4><div><p>"+line +"</p></div>"
         else
