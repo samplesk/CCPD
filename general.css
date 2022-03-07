@@ -36,13 +36,16 @@ sub- or category-headlines. */
     font-family: "HK Grotesk",Arial,sans-serif;
     font-weight: 400;
     color: #000000;
+    margin-top: 0px;
   }
 
-  p1{ /* website */
-    font-size: 22px;
+  .p1{ /* visit website */
+    font-size: 20px;
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
     font-weight: 400;
     color: #000000;
+    margin-top: 20px;
+    padding-top: 20px;
   }
 
   h1{ /* fellowship name*/
@@ -59,19 +62,23 @@ sub- or category-headlines. */
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
     font-weight: 350;
     color: #828282;
+    padding-bottom: 20px;
   }
 
   h4{ /*section header of fellowship details*/
-    font-size: 18px;
+    font-size: 20px;
     font-family: "HK Grotesk",Arial,sans-serif;
     font-weight: 700;
     color: #000000;
+    margin-bottom: 0px;
   }
 
   h5{ /*Details, Requirements*/
     font-size: 24px;
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
-    font-weight: bold;
+    font-weight: 550;
     color: #000000;
     text-align: left;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
   }

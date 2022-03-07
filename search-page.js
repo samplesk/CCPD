@@ -496,11 +496,11 @@ var data = [
         if(key == "description")
           fellowship_details += "<h3>" + line + "</h3>"
         else if (key == "website")
-          fellowship_details += "<p1>"+ "Visit: "+ line +"</p1>"
+          fellowship_details += "<element class = \"p1\">" + "Visit: "+ line + "</element class = \"p1\">"
         else if(key != "other")
-          fellowship_details += "<h4>"+newFellowshipKeys[key]+ "</h4><div><p>"+line +"</p></div>"
+          fellowship_details += "<h4>" + newFellowshipKeys[key] + "</h4><div><p>" + line + "</p></div>"
         else
-          fellowship_details += "<h4>Other Details and Requirements</p>"+ "</h4><div><p>"+line +"</p></div>"
+          fellowship_details += "<h4>Other Details and Requirements</p>" + "</h4><div><p>" + line + "</p></div>"
       }
       
       return fellowship_details
