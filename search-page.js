@@ -518,7 +518,9 @@ var data = [
   $("#fellowship-accordion").accordion({
       collapsible: true,
       active: false,
-      heightStyle: "content"
+      autoHeight: false
   })
+
+
   })
   console.log(html)
