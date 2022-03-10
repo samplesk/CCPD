@@ -83,12 +83,11 @@ sub- or category-headlines. */
     text-decoration-thickness: 1px;
   }
 
+  /* Search box*/
   .form-control.input-lg{
-    font-size: 16px;
-    font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
-    font-weight: 400;
-    color: #000000;
-    font-style: normal;
-    text-align: left;
-    margin-left: 100px;
+  font-size: 24px;
+  font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 20px;
   }
