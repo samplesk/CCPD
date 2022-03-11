@@ -433,9 +433,12 @@ var data = [
   Does NOT display on page
   */
   var fellowships = {}
+  var fellowship_ids = {}
   data.forEach(function(item) {
-  if(!(item.name in fellowships))
+  if(!(item.name in fellowships)){
     fellowships[item.name] = [item] // adds new fellowship name to array
+    fellowship_ids[item.name] = item.fellowship_id
+  }
   else
       fellowships[item.name].push(item) // adds the information for that fellowship
   })
@@ -476,7 +479,7 @@ var data = [
   */
   console.log(fellowships)
   var html = $.map(fellowships, function(body, fellowship) {
-  return "<h1 id=" + fellowship + ">" + fellowship + "</h1>" + // fellowship name header
+  return "<h1 id=" + fellowship_ids[fellowship] + ">" + fellowship + "</h1>" + // fellowship name header
     "<div>" + $.map(body, function(item, i) {
         console.log(i, item)
         return format(item)
