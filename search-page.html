@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,3 +102,180 @@
 </script>
 </body>
 </html> 
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="sidebar.css" />
+<link rel="stylesheet" href="accordion-content.css" />
+<link rel="stylesheet" href="general.css" />
+<link rel="stylesheet" href="navigation-bar.css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+<script src="search-page.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+
+  <ul>
+    <li><a class="search-page" href="search-page.html">Browse Fellowships</a></li>
+    <li><a href="https://www.southwestern.edu/academics/fellowships-scholarships/">CCPD Fellowship Site</a></li>
+    <li><a href="https://www.southwestern.edu/academics/fellowships-scholarships/get-help-fellowship-advising/">Get Help</a></li>
+    <li><a class="about-page" href = "about.html">About</a></li>
+    
+  </ul>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+
+
+  <button class="collapsible">GPA</button>
+  <div id="GPA" class="content">
+    <input type="checkbox" id="gpa1" name="gpa1" value="2.0">
+    <label for="gpa1">2.0+</label><br>
+    <input type="checkbox" id="gpa2" name="gpa2" value="2.5">
+    <label for="gpa2">2.5+</label><br>
+    <input type="checkbox" id="gpa3" name="gpa3" value="3.0">
+    <label for="gpa3">3.0+</label><br>
+    <input type="checkbox" id="gpa4" name="gpa4" value="3.5">
+    <label for="gpa4">3.5+</label><br>
+    <input type="checkbox" id="gpa5" name="gpa5" value="3.7">
+    <label for="gpa5">3.7+</label><br>
+</div>
+  <button class="collapsible">Grade Level</button>
+  <div id="min_grade_level" class="content">
+    <input type="checkbox" id="gradeLevel1" name="gradeLevel1" value="1">
+    <label for="gradeLevel1">1st-year/Freshman</label><br>
+    <input type="checkbox" id="gradeLevel2" name="gradeLevel2" value="2">
+    <label for="gradeLevel2">2nd-year/Sophomore</label><br>
+    <input type="checkbox" id="gradeLevel3" name="gradeLevel3" value="3">
+    <label for="gradeLevel3">3rd-year/Junior</label><br>
+    <input type="checkbox" id="gradeLevel4" name="gradeLevel4" value="4">
+    <label for="gradeLevel4">4th-year/Senior</label><br>
+</div>
+  <button class="collapsible">Location</button>
+  <div id="location" class="content">
+    <input type="checkbox" id="location1" name="location1" value="Domestic">
+    <label for="location1">Domestic</label><br>
+    <input type="checkbox" id="location2" name="location2" value="International">
+    <label for="location2">International</label><br>
+  </div>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>  
+  <!-- <h2>Search Fellowships</h2> -->
+  
+  <input type="search" class="form-control input-lg" onkeyup="search_fellowship()" id="txt-search" placeholder="Search Fellowships" data-search>
+  <script src="search-bar.js" defer></script>
+
+  <br> <br>
+
+  <div id="fellowship-accordion"></div>
+  
+</div>
+
+<script>
+    function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+  
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+</script>
+
+<!-- https://www.heathertovey.com/blog/floating-back-to-top-button/-->
+<!-- Styles your button (this is a black square with white text) -->
+<style>
+  .back-to-top {
+    background-color: #FFCD00;
+    color: #FFFFFF;
+    opacity: 0;
+    transition: opacity .6s ease-in-out;
+    z-index: 999;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 0%;
+  }
+
+  a.back-to-top {
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.6;
+    padding-left: 2px;
+    padding-top: 14px;
+  }
+
+  .back-to-top:hover, .back-to-top:focus, .back-to-top:visited {
+    color: #FFFFFF;
+  }
+
+  .back-to-top.show {
+    opacity: 1;
+  }
+</style>
+
+<!-- Adds the back to top link to your website -->
+<a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
+
+<!-- Fades in the button when you scroll down -->
+<script>
+  var link = document.getElementById("back-to-top");
+  var amountScrolled = 250;
+
+  window.addEventListener('scroll', function(e) {
+      if ( window.pageYOffset > amountScrolled ) {
+          link.classList.add('show');
+      } else {
+          link.className = 'back-to-top';
+      }
+  });  
+//<!-- Scrolls to Top -->
+  link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      var distance = 0 - window.pageYOffset;
+      var increments = distance/(500/16);
+      function animateScroll() {
+          window.scrollBy(0, increments);
+          if (window.pageYOffset <= document.body.offsetTop) {
+              clearInterval(runAnimation);
+          }
+      };
+      // Loop the animation function
+      var runAnimation = setInterval(animateScroll, 16);
+  });
+</script>
+</body>
+</html> 
+>>>>>>> Stashed changes
