@@ -476,12 +476,15 @@ var data = [
   */
   console.log(fellowships)
   var html = $.map(fellowships, function(body, fellowship) {
-  return "<h1>" + fellowship + "</h1>" + // fellowship name header
+  return "<h1 id=" + fellowship + ">" + fellowship + "</h1>" + // fellowship name header
     "<div>" + $.map(body, function(item, i) {
         console.log(i, item)
         return format(item)
     }).join("") + "</div>"
   }).join("")
+
+  // https://stackoverflow.com/questions/21775399/create-a-state-saving-accordion/21777092
+  window.location.hash = '#' + $(this).attr('id');
   
   /*Creates inner accordion layer:
   seperates the inner accordion layer into different rows/columns
