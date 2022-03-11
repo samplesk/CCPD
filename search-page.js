@@ -479,7 +479,7 @@ var data = [
   */
   console.log(fellowships)
   var html = $.map(fellowships, function(body, fellowship) {
-  return "<h1 id=" + fellowship_ids[fellowship] + ">" + fellowship + "</h1>" + // fellowship name header
+  return "<h1 id=" + fellowship_ids[fellowship] + ">" + fellowship + "<a onclick='removePanel(this)' style='float:right'>X</a></h1>" + // fellowship name header
     "<div>" + $.map(body, function(item, i) {
         console.log(i, item)
         return format(item)
@@ -537,6 +537,15 @@ var data = [
       return fellowship_details
     }).join("")
     }
+
+/*Removes panel when x link is clicked*/
+//USED: http://jsfiddle.net/gh1e4moy/
+//USED: https://jqueryui.com/upgrade-guide/1.10/#added-ability-to-add-remove-panels
+    function removePanel(a) {
+      $(a).parent().next().remove();
+      $(a).parent().remove();
+      return false;
+  }
   
   /*Attaches outer and inner layer to each other to create complete accordion object.
   Places accordion object to fellowship-accordion div placeholder from search-page.html.
