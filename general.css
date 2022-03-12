@@ -38,6 +38,7 @@ sub- or category-headlines. */
     color: #000000;
     margin-top: 0px;
   }
+  
 
   .p1{ /* visit website */
     font-size: 20px;
@@ -47,6 +48,7 @@ sub- or category-headlines. */
     margin-top: 20px;
     padding-top: 20px;
   }
+
 
   h1{ /* fellowship name*/
     font-size: 18px;

@@ -477,11 +477,11 @@ var data = [
     content inside each fellowship object is still empty at this point.
     Does display on page
   */
-  console.log(fellowships)
+  //console.log(fellowships)
   var html = $.map(fellowships, function(body, fellowship) {
   return "<h1 id=" + fellowship_ids[fellowship] + ">" + fellowship + "<a onclick='removePanel(this)' style='float:right'>X</a></h1>" + // fellowship name header
     "<div>" + $.map(body, function(item, i) {
-        console.log(i, item)
+        //console.log(i, item)
         return format(item)
     }).join("") + "</div>"
   }).join("")
@@ -527,7 +527,7 @@ var data = [
         if(key == "description")
           fellowship_details += "<h3>" + line + "</h3>"
         else if (key == "website")
-          fellowship_details += "<element class = \"p1\">" + "Visit: "+ line + "</element class = \"p1\">"
+          fellowship_details += "<element class = \"p1\">" + "Visit: " + "<a href=\"url\">" + line + "</a>" + "</element class = \"p1\">"
         else if(key != "other")
           fellowship_details += "<h4>" + newFellowshipKeys[key] + "</h4><div><p>" + line + "</p></div>"
         else
@@ -552,7 +552,7 @@ var data = [
   */
  // USED: https://jqueryui.com/accordion/ for accordion functions/interactions
   $(function(){
-  console.log(html)
+  //console.log(html)
   $("#fellowship-accordion").append(html)
   //$("#fellowship-accordion").children("div").accordion()
   $("#fellowship-accordion").accordion({
@@ -563,4 +563,4 @@ var data = [
 
 
   })
-  console.log(html)
+  //console.log(html)
