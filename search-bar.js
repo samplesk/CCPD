@@ -13,7 +13,7 @@ const input = document.getElementById("txt-search");
 function search_fellowship(){
     // get everything to all uppercase for matching purposes
     const filter = input.value.toUpperCase();
-    // loop through all the fellowships to check for matchins titles to input
+    // loop through all the fellowships to check for matching titles to input
     for(var i=0; i < fellowshipList.length; i++) {
         // if the uppercased input matches the uppercased name in the fellowships
         if(fellowshipList[i].name.toLocaleUpperCase().includes(filter)){
