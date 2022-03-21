@@ -117,8 +117,7 @@
   }).join("")
 
   // https://stackoverflow.com/questions/21775399/create-a-state-saving-accordion/21777092
-  window.location.hash = '#' + $(this).attr('fellowship_id');
-
+  window.location.hash = '#' + $.attr('fellowship_id');
   
   /*Creates inner accordion layer:
   seperates the inner accordion layer into different rows/columns
