@@ -109,7 +109,7 @@
   */
   //console.log(fellowships)
   var html = $.map(fellowships, function(body, fellowship) {
-  return "<h1 id=" + fellowship_ids[fellowship] + ">" + fellowship + "<a onclick='removePanel(this)' style='float:right'>X</a></h1>" + // fellowship name header
+  return "<h1 id='" + fellowship_ids[fellowship] + "'>" + fellowship + "<a onclick='removePanel(this)' style='float:right'>X</a></h1>" + // fellowship name header
     "<div>" + $.map(body, function(item, i) {
         //console.log(i, item)
         return format(item)
@@ -117,7 +117,8 @@
   }).join("")
 
   // https://stackoverflow.com/questions/21775399/create-a-state-saving-accordion/21777092
-  window.location.hash = '#' + $(this).attr('id');
+  window.location.hash = '#' + $(this).attr('fellowship_id');
+
   
   /*Creates inner accordion layer:
   seperates the inner accordion layer into different rows/columns
