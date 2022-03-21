@@ -408,20 +408,20 @@
         "other": "Must identify as minority"
         },
         {
-            "fellowship_id": 25,
-            "name": "Ph.D. Engineering and Science Fellowship",
-            "description": "The objective of this program is to offer doctoral fellowships to underrepresented minority students who have either completed, are currently enrolled in a master’s in engineering program, or received admittance into a PhD program directly from a bachelor’s degree program. Fellowships may be used at any participating GEM Member University where the GEM Fellow is admitted. During the first academic year of being awarded the GEM Fellowship, the GEM Consortium remits a stipend and a cost of instruction grant to the institution where the fellow is enrolled. Thereafter, up to the fifth year of the doctoral program, continued financial support of the GEM Fellow is borne by the GEM University through alternative sources of funding such as institutional awards, assistantships or other external fellowships. Continued support from the GEM University will be contingent upon the GEM Fellow remaining in good academic standing and making satisfactory progress in their graduate program. Fellows are provided a paid graduate level summer work experience through the Employer Member for at least one summer.",
-            "website": "https:\/\/www.gemfellowship.org\/gem-fellowship-program\/#a",
-            "gpa": 3,
-            "age": "N\/A",
-            "citizenship": "Applicants must be a U.S. citizen or U.S. permanent resident at time of application.",
-            "level_of_study": "Graduate (PHD)",
-            "field_of_study_interests": "Engineering and Science",
-            "location_of_study": "Domestic",
-            "specific_location": "Various",
-            "requires_campus_endorsement_nomination": "Uncertain",
-            "campus_application_deadline": "Uncertain",
-            "final_app_deadline": "Various, November 15",
-            "other": "Must identify as minority"
-            }
+        "fellowship_id": 25,
+        "name": "Ph.D. Engineering and Science Fellowship",
+        "description": "The objective of this program is to offer doctoral fellowships to underrepresented minority students who have either completed, are currently enrolled in a master’s in engineering program, or received admittance into a PhD program directly from a bachelor’s degree program. Fellowships may be used at any participating GEM Member University where the GEM Fellow is admitted. During the first academic year of being awarded the GEM Fellowship, the GEM Consortium remits a stipend and a cost of instruction grant to the institution where the fellow is enrolled. Thereafter, up to the fifth year of the doctoral program, continued financial support of the GEM Fellow is borne by the GEM University through alternative sources of funding such as institutional awards, assistantships or other external fellowships. Continued support from the GEM University will be contingent upon the GEM Fellow remaining in good academic standing and making satisfactory progress in their graduate program. Fellows are provided a paid graduate level summer work experience through the Employer Member for at least one summer.",
+        "website": "https:\/\/www.gemfellowship.org\/gem-fellowship-program\/#a",
+        "gpa": 3,
+        "age": "N\/A",
+        "citizenship": "Applicants must be a U.S. citizen or U.S. permanent resident at time of application.",
+        "level_of_study": "Graduate (PHD)",
+        "field_of_study_interests": "Engineering and Science",
+        "location_of_study": "Domestic",
+        "specific_location": "Various",
+        "requires_campus_endorsement_nomination": "Uncertain",
+        "campus_application_deadline": "Uncertain",
+        "final_app_deadline": "Various, November 15",
+        "other": "Must identify as minority"
+        }
 ]
