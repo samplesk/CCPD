@@ -26,3 +26,26 @@ function search_fellowship(){
         }
     }
 }
+/*
+* Checks for if/when the 'X' in the search bar is clicked
+* if it is clicked then re-display all of the items of the accordion
+*/
+document.getElementById("txt-search").addEventListener("search", function(event) {
+    for(var i=0; i< fellowshipList.length; i++){ // loop through all of the accordion items
+        acc[i].style.display = 'block'; // set their display so that they show
+    }
+  });
+
+  /*
+  * since the enter key also works as a "search" event
+  * we make it so that hitting enter does nothing to 
+  * avoid someone hitting enter and repopulating their
+  * entire accordion on accident
+  */
+document.getElementById("txt-search").addEventListener("keypress", function(event) {
+    // if the key is the enter key
+    if (event.key === "Enter") {
+    // essentially says "do nothing"
+      event.preventDefault(); 
+    }
+  });
