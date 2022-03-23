@@ -55,6 +55,7 @@ sub- or category-headlines. */
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
     font-weight: 400;
     color: #000000;
+    padding-left:30px;
   }
 
  /*h2 = Search Felowships in sidebar.css*/
