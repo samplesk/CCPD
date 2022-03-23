@@ -25,8 +25,9 @@ li a:hover {
 }
 
 a{ /* Home, Browse Fellowships, CCPD Fellowship Site, GetHelp*/
-  font-size: 17px;
+  font-size: 18px;
   font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
   font-weight: 400;
   color: #000000;
+  text-decoration: underline;
 }

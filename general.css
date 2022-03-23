@@ -40,8 +40,8 @@ sub- or category-headlines. */
   }
   
 
-  .p1{ /* visit website */
-    font-size: 20px;
+  .p1{ /* "Visit Scholarship site:" */
+    font-size: 18px;
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
     font-weight: 400;
     color: #000000;
@@ -59,7 +59,7 @@ sub- or category-headlines. */
 
  /*h2 = Search Felowships in sidebar.css*/
 
-  h3{ /*fellowship description*/
+  h3{ /*fellowship details header*/
     font-size: 18px;
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
     font-weight: 350;
