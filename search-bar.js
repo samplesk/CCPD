@@ -1,4 +1,4 @@
-const fellowshipList = data;
+const fellowshipList = fellowships_json_data;
 const acc = document.getElementsByTagName('h1');
 const input = document.getElementById("txt-search");
 

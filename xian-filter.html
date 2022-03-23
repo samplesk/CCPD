@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="height=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> -->
+    <!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+    <!-- <script src="test2.js"></script> -->
+    <script>
+        //USED: https://jsfiddle.net/xianshenglu/gzs3fr7n/
+    function change() {
+        let results = Array.from(document.querySelectorAll('.result > div')),
+            modelsChecked = document.querySelectorAll('.filter input.models:checked'),
+            processorsChecked = document.querySelectorAll('.filter input.processors:checked');
+        // Hide all results
+        results.forEach(function(result) {
+            result.style.display = 'none';
+        });
+        // Filter results to only those that meet ALL requirements:        
+
+        filterModelsOrProcessors(modelsChecked);
+
+        if (processorsChecked.length != 0) {
+            filterModelsOrProcessors(processorsChecked);
+        }
+
+        function filterModelsOrProcessors(modelsOrProcessorsChecked) {
+            results = Array.from(modelsOrProcessorsChecked).reduce(function(sum, input) {
+                const attrib = input.getAttribute('rel');
+                return sum.concat(results.filter(function(result) {
+                    return result.classList.contains(attrib);
+                }));
+            }, []);
+        }
+        // Show those filtered results:
+        results.forEach(function(result) {
+            result.style.display = 'block';
+        });
+    }
+    change();
+    </script>
+</head>
+
+<body>
+    <div class="filter">
+        <h1>Select models</h1>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" rel="apple" class="models" onchange="change()" />Apple</label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" rel="samsung" class="models" onchange="change()" />Samsung</label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" rel="xiaomi" class="models" onchange="change()" />Xiaomi</label>
+        </div>
+        <h1>Select processors</h1>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" rel="a9" class="processors" onchange="change()" />A9</label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" rel="a8" class="processors" onchange="change()" />A8</label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" rel="snapdragon" class="processors" onchange="change()" />Snapdragon</label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" rel="exynos" class="processors" onchange="change()" />Exynos</label>
+        </div>
+    </div>
+    <div class="result">
+        <div class="apple a9">
+            <h1>iPhone 7</h1>
+        </div>
+        <div class="apple a8">
+            <h1>iPhone 6</h1>
+        </div>
+        <div class="samsung exynos">
+            <h1>Samsung s7</h1>
+        </div>
+        <div class="xiaomi snapdragon">
+            <h1>Xiaomi Redmi note 4x</h1>
+        </div>
+    </div>
+</body>
+
+</html>

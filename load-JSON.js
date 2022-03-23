@@ -32,11 +32,12 @@
     for (let i = 0; i < FJSON["Sheet2"].length; i++) {
       if(FJSON["Sheet2"][i].name != "")
       requirements_json_data[i] = FJSON["Sheet2"][i]
+      
     }
     if(fellowships_json_data.length != requirements_json_data.length)
-      console.log("Amount of fellowships in Sheet 1 do not match amount of fellowships in Sheet 2")
+      console.log("Amount of fellowships in Sheet1 do not match amount of fellowships in Sheet2")
   })
-  
+  console.log(requirements_json_data);
   /**
    * Andres Orozco
    * If the fellowship information from fellowships.json has loaded correctly, this runs and the website looks good. Otherwise,
@@ -62,6 +63,7 @@
   // Make sure information is loaded before setting up the website. This was the main issue for a while.
   await loadFellowshipsJson(1);
   createAccordion();
+  createFilter();
 }
 
 /**

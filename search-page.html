@@ -10,7 +10,10 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
-<script src="search-page.js"></script>
+<script src="accordion.js"></script>
+<script src="load-JSON.js"></script>
+<script src="filter.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>
@@ -26,6 +29,14 @@
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <button class="collapsible">Checkbox Test</button>
+  <div id="test" class="content">
+    <input type="checkbox" id="test1" name="test1" value="true" onchange="change()">
+    <label for="test1">True</label><br>
+    <input type="checkbox" id="test2" name="test2" value="false" onchange="change()">
+    <label for="test2">False</label><br>
+  </div>
 
   <button class="collapsible">Level of Study</button>
   <div id="level_of_study" class="content">
@@ -116,7 +127,7 @@
 </script>
 
 <!-- https://www.heathertovey.com/blog/floating-back-to-top-button/-->
-<!-- Styles your button (this is a SU orange square with white text) -->
+<!-- Styles your button (this is a black square with white text) -->
 <style>
   .back-to-top {
     background-color: #FFCD00;
@@ -159,7 +170,7 @@
 <!-- Fades in the button when you scroll down -->
 <script>
   var link = document.getElementById("back-to-top");
-  var amountScrolled = 200;
+  var amountScrolled = 250;
 
   window.addEventListener('scroll', function(e) {
       if ( window.pageYOffset > amountScrolled ) {
