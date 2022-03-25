@@ -1,4 +1,3 @@
-
 /**
  * Andres Orozco
  * This is pretty much the entire thing in an async function. The problem I was facing was that the entire program was completing
@@ -7,6 +6,17 @@
  * is loaded and usable before creating the fellowships accordion.
  */
  async function createAccordion() {
+
+  /**
+   * Andres Orozco
+   * This code sets up which panel to start at. So theoretically, when the website is up, CCPD staff can click the panel they want to send
+   * someone, copy the URL, send it, they can paste it into their browser, and the website will open up with that panel.
+   */
+   var firstURL = window.location.href
+   var indexOfFragID = firstURL.indexOf("#")
+   var theNum = firstURL.substring(indexOfFragID+1)
+   var theInt = parseInt(theNum)
+   var startingPanel = theInt - 1
 
   /*creates fellowship dictionary with each fellowship name 
   as the key and then attaches the fellowship 
@@ -24,7 +34,7 @@
       fellowships[item.name].push(item) // adds the information for that fellowship
   })
   
-  console.log(fellowships);
+  // console.log(fellowships);
 
  /*Dictionaries that contain all fellowship keys, 
  and the name you actually want it to be labeled as on the web page
@@ -67,8 +77,7 @@
     }).join("") + "</div>"
   }).join("")
 
-  // https://stackoverflow.com/questions/21775399/create-a-state-saving-accordion/21777092
-  window.location.hash = '#' + $.attr('fellowship_id');
+
   
   /*Creates inner accordion layer:
   seperates the inner accordion layer into different rows/columns
@@ -128,10 +137,26 @@
   $("#fellowship-accordion").append(html)
   //$("#fellowship-accordion").children("div").accordion()
   $("#fellowship-accordion").accordion({
-      collapsible: true,
-      active: false,
-      autoHeight: false
-  })
+    collapsible: true,
+    active: startingPanel,
+    autoHeight: false,
+    /**
+     * Andres Orozco
+     * This code specifies that when a panel is activated in the accordion, change the URL
+     */
+    activate: function( event, ui ) {
+      
+      // Gets the activated panel
+      var currentHeaderID = ui.newHeader
+
+      // Get the one-based ID of the panel in the accordion
+      var fellowShipNumberOneBased = currentHeaderID[0].id
+
+      // Change the URL to match "#" + theNumber
+      window.location.hash = "#" + fellowShipNumberOneBased
+    }
+    
+})
 
 
   })
