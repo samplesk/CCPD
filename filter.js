@@ -16,22 +16,26 @@ async function createFilter(){
     requirements[item.name].push(item) // adds the information for that fellowship
   })
 
-  console.log(requirements);
-
   cleanRequirements();
   function cleanRequirements(){
     var html = $.map(requirements, function(body, fellowship) {
       console.log(fellowship);
       return $.map(body, function(item, i) {
-            console.log(i, item)
-            return
+            return $.map(item, function(line, key){
+                //console.log(key)
+                //console.log(line)
+                if(line != null && typeof line === 'string'){
+                  line = line.toLowerCase();
+                }
+                return 
+            })
         })
       })
   }
-  console.log(requirements);
+  //console.log(requirements);
 }
 
-
+//https://stackoverflow.com/questions/54695113/multi-condition-filtering-with-checkboxes-javascript
 
 
 const completeFellowshipList = fellowships_json_data;
@@ -42,7 +46,7 @@ const element = document.getElementsByTagName('h1');
 function change() {
 
 }
-change();
+//change();
 
 
 //<a onclick='removePanel(this)' style='float:right'>X</a>
