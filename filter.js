@@ -76,14 +76,14 @@ function onCheck(event) {
     if(tempElem.checked == true){
     // check the stored gpa of the element, see if its larger than the checkbox value or null
     if (gpas[i] >= tempElem.value.toLowerCase() || gpas[i] == 0) {
-        element[i].style.display = "none";
+        element[i].style.display = "block"
      } else {
-        element[i].style.display = "block";
+        element[i].style.display = "none"
       }
     }
       // restore all of the accordion elements if the box gets unchecked
       if(tempElem.checked == false){
-        element[i].style.display = "block";
+        element[i].style.display = "block"
       }
     }
   }
