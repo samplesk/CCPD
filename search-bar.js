@@ -11,6 +11,7 @@ const input = document.getElementById("txt-search");
  * do not have the input.
  */
 function search_fellowship(){
+    set_accordion_inactive() // located in filter.js, cleans up accordion to make displaying search results easier
     // get everything to all uppercase for matching purposes
     const filter = input.value.toUpperCase();
     // loop through all the fellowships to check for matching titles to input

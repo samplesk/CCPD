@@ -144,17 +144,17 @@
      * Andres Orozco
      * This code specifies that when a panel is activated in the accordion, change the URL
      */
-    activate: function( event, ui ) {
+    // activate: function( event, ui ) {
       
-      // Gets the activated panel
-      var currentHeaderID = ui.newHeader
+    //   // Gets the activated panel
+    //   var currentHeaderID = ui.newHeader
 
-      // Get the one-based ID of the panel in the accordion
-      var fellowShipNumberOneBased = currentHeaderID[0].id
+    //   // Get the one-based ID of the panel in the accordion
+    //   var fellowShipNumberOneBased = currentHeaderID[0].id
 
-      // Change the URL to match "#" + theNumber
-      window.location.hash = "#" + fellowShipNumberOneBased
-    }
+    //   // Change the URL to match "#" + theNumber
+    //   window.location.hash = "#" + fellowShipNumberOneBased
+    // }
     
 })
 

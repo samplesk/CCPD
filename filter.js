@@ -68,6 +68,8 @@ function removePanel(a) {
 }
 
 function onCheck(event) {
+  // set accordion elements to not-active
+  set_accordion_inactive()
   // get element that was clicked on (the checkbox)
   var tempElem = event.target
   // for each element in the accordion
@@ -86,4 +88,28 @@ function onCheck(event) {
         element[i].style.display = "block"
       }
     }
+  }
+
+  /*
+  * Good to call before doing any sort of searching/filtering
+  * sets the accordion to non-active everywhere so that no secitons 
+  * of the accordion are left open to bug out
+  */
+  function set_accordion_inactive(){
+  // Set all the accordion elements to not active
+  // gets hearders of accordion and sets them to not active
+   $('#fellowship-accordion').accordion("option", "active", -1);
+   // Then grabs the children of the header to also set them to not active
+   jQuery('.fellowship-accordion, .childAccordion').accordion({
+    collapsible: true,
+    active: false,
+    heightStyle: 'content'
+    ,
+    // actually sets all of the accordion children to non-active
+    beforeActivate: function (e, ui) {
+        if($(this).hasClass('fellowship-accordion')){
+            $('.childAccordion').accordion("option", "active", -1);
+        }
+    }
+});
   }
