@@ -43,9 +43,16 @@ async function createFilter(){
    })
    // maps all of the levels of study for each fellowship
    L_O_S = $.map(completeFellowshipList, function(item){
-     return item.level_of_study
+     // if it contains under, assume it is undergrad and assign 0
+     if(item.level_of_study.toLowerCase().match("under")){
+       return 0
+     } else {
+       // otherwise assume graduate and assign 1
+       return 1
+     }
+     //return item.level_of_study.toLowerCase()
    })
-  //console.log(L_O_S)
+  console.log(L_O_S)
 }
 
 //https://stackoverflow.com/questions/54695113/multi-condition-filtering-with-checkboxes-javascript
@@ -100,7 +107,7 @@ function onCheckGPA(event) {
       if(tempElem.checked == true) { // if the box is checked
         // currently just checking the first letter against the value of 
         // level_of_study to make filtering from 'undergrad' & 'graduate'
-        if(L_O_S[i].toLowerCase()[0] === tempElem.value.toLowerCase()[0]){
+        if(L_O_S[i] == tempElem.value){
           element[i].style.display = "block" // show if matching
         } else {
           element[i].style.display = "none" // hide if not
