@@ -40,10 +40,8 @@
 
   <button class="collapsible">Level of Study</button>
   <div id="level_of_study" class="content">
-    <input type="checkbox" id="level_of_study1" name="level_of_study1" value="Graduate">
-    <label for="level_of_study1">Graduate</label><br>
-    <input type="checkbox" id="level_of_study2" name="level_of_study2" value="Undergraduate">
-    <label for="level_of_study2">Undergraduate</label><br>
+    <input type="checkbox" id="level_of_study1" name="level_of_study1" oninput="onCheckLevel(event)" value="g">Graduate<br>
+    <input type="checkbox" id="level_of_study2" name="level_of_study2" oninput="onCheckLevel(event)" value="u">Undergraduate<br>
   </div>
 
   <button class="collapsible">Location of Study</button>
@@ -56,11 +54,11 @@
 
   <button class="collapsible">GPA</button>
   <div id="GPA" class="content">
-    <input type="checkbox" id="gpa1" name="gpa" oninput="onCheck(event)" value="2.0">2.0+<br>
-    <input type="checkbox" id="gpa2" name="gpa" oninput="onCheck(event)" value="2.5">2.5+<br>
-    <input type="checkbox" id="gpa3" name="gpa" oninput="onCheck(event)" value="3.0">3.0+<br>
-    <input type="checkbox" id="gpa4" name="gpa" oninput="onCheck(event)" value="3.5">3.5+<br>
-    <input type="checkbox" id="gpa5" name="gpa" oninput="onCheck(event)" value="3.7">3.7+<br>
+    <input type="checkbox" id="gpa1" name="gpa" oninput="onCheckGPA(event)" value="2.0">2.0+<br>
+    <input type="checkbox" id="gpa2" name="gpa" oninput="onCheckGPA(event)" value="2.5">2.5+<br>
+    <input type="checkbox" id="gpa3" name="gpa" oninput="onCheckGPA(event)" value="3.0">3.0+<br>
+    <input type="checkbox" id="gpa4" name="gpa" oninput="onCheckGPA(event)" value="3.5">3.5+<br>
+    <input type="checkbox" id="gpa5" name="gpa" oninput="onCheckGPA(event)" value="3.7">3.7+<br>
 </div>
 
   <button class="collapsible">Requires US Citizen/National/Permanent Resident</button>

@@ -2,6 +2,7 @@
 //https://stackoverflow.com/questions/8796472/filtering-with-checkboxes-using-jquery
 var requirements = {}
 var gpas = {}
+var L_O_S = {}
 async function createFilter(){
   /*creates fellowship dictionary with each fellowship name 
   as the key and then attaches the fellowship 
@@ -22,8 +23,8 @@ async function createFilter(){
       //console.log(fellowship);
       return $.map(body, function(item, i) {
             return $.map(item, function(line, key){
-                //console.log(key)
-                //console.log(line)
+              //  console.log(key)
+              //  console.log(line)
                 if(line != null && typeof line === 'string'){
                   line = line.toLowerCase();
                 }
@@ -40,7 +41,10 @@ async function createFilter(){
     }
      return item.min_gpa
    })
-  //console.log(gpas)
+   L_O_S = $.map(completeFellowshipList, function(item){
+     return item.level_of_study
+   })
+  console.log(L_O_S)
 }
 
 //https://stackoverflow.com/questions/54695113/multi-condition-filtering-with-checkboxes-javascript
@@ -50,11 +54,6 @@ const completeFellowshipList = fellowships_json_data;
 const requirementList = requirements_json_data;
 const element = document.getElementsByTagName('h1');
 //const input = document.getElementById("txt-search");
-
-function change() {
-
-}
-//change();
 
 
 //<a onclick='removePanel(this)' style='float:right'>X</a>
@@ -67,7 +66,7 @@ function removePanel(a) {
   return false;
 }
 
-function onCheck(event) {
+function onCheckGPA(event) {
   // set accordion elements to not-active
   set_accordion_inactive()
   // get element that was clicked on (the checkbox)
@@ -84,6 +83,23 @@ function onCheck(event) {
       }
     }
       // restore all of the accordion elements if the box gets unchecked
+      if(tempElem.checked == false){
+        element[i].style.display = "block"
+      }
+    }
+  }
+
+  function onCheckLevel(event) {
+    set_accordion_inactive()
+    var tempElem = event.target
+    for(var i = 0; i < element.length; i++){
+      if(tempElem.checked == true) {
+        if(L_O_S[i].toLowerCase()[0] === tempElem.value.toLowerCase()[0]){
+          element[i].style.display = "block"
+        } else {
+          element[i].style.display = "none"
+        }
+      }
       if(tempElem.checked == false){
         element[i].style.display = "block"
       }
