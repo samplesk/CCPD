@@ -1,16 +1,17 @@
 
 /*Sidebar */
 .sidebar {
-  height: 100%;
-  width: 0;
+  height: 90%;
+  width: 250px;
   position: fixed;
   z-index: 1;
-  top: 0;
+  /*margin-top: 55px;*/
+  top: 20;
   left: 0;
-  background-color: #828282;
+  background-color: #f1f1f1;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 0px;
 }
 
 .sidebar a {
@@ -34,32 +35,8 @@ h2 { /*Search fellowships*/
   display: inline-block;
 }
 
-/* Position and style the close button (top right corner) */
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-  transition: 0s;
-  color: #444;
-  }
-
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #FFCD00;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color: #444;
-}
-
 #main {
-  transition: margin-left .5s;
+  margin-left: 250px;
   padding: 16px;
 }
 
@@ -71,8 +48,8 @@ h2 { /*Search fellowships*/
 
 /*Collapsible/Hamburger*/
 .collapsible {
-  background-color: #777;
-  color: white;
+  background-color: #f1f1f1;
+  color: black;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -82,13 +59,16 @@ h2 { /*Search fellowships*/
   font-size: 15px;
 }
 
-.active, .collapsible:hover {
-  background-color: #555;
+.collapsible:hover {
+  background-color: #FFCD00;
+}
+.active {
+  background-color: #b9b4b481;
 }
 
 .collapsible:after {
   content: '\002B';
-  color: white;
+  color: black;
   font-weight: bold;
   float: right;
   margin-left: 5px;
@@ -103,5 +83,6 @@ h2 { /*Search fellowships*/
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
+  background-color: white;
+  color: black;
 }

@@ -88,9 +88,9 @@ sub- or category-headlines. */
 
   /* Search box*/
   .form-control.input-lg{
-  font-size: 24px;
-  font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
-  font-weight: 400;
-  text-align: left;
-  margin-left: 20px;
-  }
+    font-size: 24px;
+    font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 0px;
+    }
