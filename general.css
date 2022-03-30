@@ -42,7 +42,7 @@ sub- or category-headlines. */
 
   .p1{ /* "Visit Scholarship site:" */
     font-size: 18px;
-    font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
+    font-family: "HK Grotesk",Arial,sans-serif;
     font-weight: 400;
     color: #000000;
     margin-top: 20px;
@@ -78,7 +78,7 @@ sub- or category-headlines. */
 
   h5{ /*Details, Requirements*/
     font-size: 24px;
-    font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
+    font-family: "HK Grotesk",Arial,sans-serif;
     font-weight: 550;
     color: #000000;
     text-align: left;
