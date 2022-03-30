@@ -41,10 +41,11 @@ async function createFilter(){
     }
      return item.min_gpa
    })
+   // maps all of the levels of study for each fellowship
    L_O_S = $.map(completeFellowshipList, function(item){
      return item.level_of_study
    })
-  console.log(L_O_S)
+  //console.log(L_O_S)
 }
 
 //https://stackoverflow.com/questions/54695113/multi-condition-filtering-with-checkboxes-javascript
@@ -89,18 +90,23 @@ function onCheckGPA(event) {
     }
   }
 
+  /*
+  * Check the level of study for each fellowship for filtering
+  */
   function onCheckLevel(event) {
-    set_accordion_inactive()
-    var tempElem = event.target
-    for(var i = 0; i < element.length; i++){
-      if(tempElem.checked == true) {
+    set_accordion_inactive() // set all accordion elements inactive for filtering
+    var tempElem = event.target // get checkbox
+    for(var i = 0; i < element.length; i++){ // check each fellowship
+      if(tempElem.checked == true) { // if the box is checked
+        // currently just checking the first letter against the value of 
+        // level_of_study to make filtering from 'undergrad' & 'graduate'
         if(L_O_S[i].toLowerCase()[0] === tempElem.value.toLowerCase()[0]){
-          element[i].style.display = "block"
+          element[i].style.display = "block" // show if matching
         } else {
-          element[i].style.display = "none"
+          element[i].style.display = "none" // hide if not
         }
       }
-      if(tempElem.checked == false){
+      if(tempElem.checked == false){ // if box gets unchecked show all
         element[i].style.display = "block"
       }
     }
