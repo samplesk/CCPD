@@ -144,18 +144,25 @@
      * Andres Orozco
      * This code specifies that when a panel is activated in the accordion, change the URL
      */
-    // activate: function( event, ui ) {
-      
-    //   // Gets the activated panel
-    //   var currentHeaderID = ui.newHeader
+    activate: function( event, ui ) {
+      /**
+       * This Stack OVerflow post exactly fixed the issue of closing and reopening the same panel
+       * https://stackoverflow.com/questions/20062540/jquery-accordion-scrolls-to-top-on-activate-then-breaks-on-second-click
+       */
+      if(!ui.newHeader.length) {
+        // https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-url-with-javascript-without-page-r
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+      }else {
+        // Gets the activated panel
+        var currentHeaderID = ui.newHeader
 
-    //   // Get the one-based ID of the panel in the accordion
-    //   var fellowShipNumberOneBased = currentHeaderID[0].id
+        // Get the one-based ID of the panel in the accordion
+        var fellowShipNumberOneBased = currentHeaderID[0].id
 
-    //   // Change the URL to match "#" + theNumber
-    //   window.location.hash = "#" + fellowShipNumberOneBased
-    // }
-    
+        // Change the URL to match "#" + theNumber
+        window.location.hash = "#" + fellowShipNumberOneBased
+      }
+    }
 })
 
 
