@@ -1,0 +1,96 @@
+/*SU White: #FFFFFF */
+/*SU Black: #000000  */
+/*SU Grey:  #828282*/
+/*SU Yellow:  #FFCD00*/
+
+/*HK Grotesk Light, Regular, and Bold
+This type should be used for all body copy, including quotes and 
+sub- or category-headlines. */
+  @font-face {
+    font-family: HKGrotesk-Regular;
+    src: url(fonts/hk-groteskzip/HKGrotesk-Regular.otf);
+  }
+  @font-face {
+    font-family: HKGrotesk-Light;
+    src: url(fonts/hk-groteskzip/HKGrotesk-Light.otf);
+  }
+  @font-face {
+    font-family: HKGrotesk-Bold;
+    src: url(fonts/hk-groteskzip/HKGrotesk-Bold.otf);
+  }
+
+/* Playfair Display Regular and Italic */
+/* This type should be used for headlines and introductory copy. */
+/* Italic should be used for emphasis.*/
+  @font-face {
+    font-family: PlayfairDisplay-Regular;
+    src: url(fonts/playfair-displayzip/PlayfairDisplay-Regular.otf);
+  }
+  @font-face {
+    font-family: PlayfairDisplay-Italic;
+    src: url(fonts/playfair-displayzip/PlayfairDisplay-Italic.otf);
+  }
+  
+  p { /*fellowship details*/
+    font-size: 18px;
+    font-family: "HK Grotesk",Arial,sans-serif;
+    font-weight: 400;
+    color: #000000;
+    margin-top: 0px;
+  }
+  
+
+  .p1{ /* "Visit Scholarship site:" */
+    font-size: 18px;
+    font-family: "HK Grotesk",Arial,sans-serif;
+    font-weight: 400;
+    color: #000000;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+
+  h1{ /* fellowship name*/
+    font-size: 18px;
+    font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
+    font-weight: 400;
+    color: #000000;
+    padding-left:30px;
+  }
+
+ /*h2 = Search Felowships in sidebar.css*/
+
+  h3{ /*fellowship details header*/
+    font-size: 18px;
+    font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
+    font-weight: 350;
+    color: #828282;
+    padding-bottom: 20px;
+  }
+
+  h4{ /*section header of fellowship details*/
+    font-size: 20px;
+    font-family: "HK Grotesk",Arial,sans-serif;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 0px;
+  }
+
+  h5{ /*Details, Requirements*/
+    font-size: 24px;
+    font-family: "HK Grotesk",Arial,sans-serif;
+    font-weight: 550;
+    color: #000000;
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  /* Search box*/
+  .form-control.input-lg{
+    font-size: 24px;
+    font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 0px;
+    }
