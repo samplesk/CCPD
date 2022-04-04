@@ -47,7 +47,7 @@
 
   var newFellowshipRequirementKeys = {
     "gpa": "Minimum GPA",
-    "age": "Minimum Age",
+    "age": "Age",
     "citizenship": "US Citizen/National/Permanent Resident",
     "requires_campus_endorsement_nomination": "Requires Campus Endorsement or Nomination",
   }
