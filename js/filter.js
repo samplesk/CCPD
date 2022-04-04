@@ -52,7 +52,7 @@ async function createFilter(){
      }
      //return item.level_of_study.toLowerCase()
    })
-  console.log(L_O_S)
+  // console.log(L_O_S)
 }
 
 //https://stackoverflow.com/questions/54695113/multi-condition-filtering-with-checkboxes-javascript
@@ -83,12 +83,12 @@ function onCheckGPA(event) {
   for (var i = 0; i < element.length; i++) {
     // if checkbox is checked
     if(tempElem.checked == true){
-    // check the stored gpa of the element, see if its larger than the checkbox value or null
-    if (gpas[i] >= tempElem.value.toLowerCase() || gpas[i] == 0) {
-        element[i].style.display = "block"
-     } else {
-        element[i].style.display = "none"
-      }
+    // check the stored gpa of the element, see if its larger than the checkbox value or null, and make sure it is not already hidden
+      if ((gpas[i] >= tempElem.value.toLowerCase() || gpas[i] == 0) && element[i].style.display != "none") {
+          element[i].style.display = "block"
+       } else {
+          element[i].style.display = "none"
+        }
     }
       // restore all of the accordion elements if the box gets unchecked
       if(tempElem.checked == false){
@@ -107,7 +107,7 @@ function onCheckGPA(event) {
       if(tempElem.checked == true) { // if the box is checked
         // currently just checking the first letter against the value of 
         // level_of_study to make filtering from 'undergrad' & 'graduate'
-        if(L_O_S[i] == tempElem.value){
+        if((L_O_S[i] == tempElem.value) && element[i].style.display != "none"){
           element[i].style.display = "block" // show if matching
         } else {
           element[i].style.display = "none" // hide if not
