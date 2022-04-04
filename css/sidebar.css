@@ -86,3 +86,11 @@ h2 { /*Search fellowships*/
   background-color: white;
   color: black;
 }
+
+.icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  bottom: 0;
+}

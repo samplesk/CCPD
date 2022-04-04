@@ -3,7 +3,7 @@
 
 ## Format to follow when editing Sheet 1:
 Sheet 1 is how the sheets will be displayed to the website visitors:
-The format to follow is not aws strict for sheet 1. Just make sure that when you add a
+The format to follow is not as strict for sheet 1. Just make sure that when you add a new fellowship or remove a fellowship
 
 ## Format to follow when editing Sheet 2:
 Sheet 2 is invisible on the website, no one will need to see it except the code itself. 
