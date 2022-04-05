@@ -129,7 +129,7 @@
     }
   
   /*Attaches outer and inner layer to each other to create complete accordion object.
-  Places accordion object to fellowship-accordion div placeholder from search-page.html.
+  Places accordion object to fellowship-accordion div placeholder from index.html.
   */
  // USED: https://jqueryui.com/accordion/ for accordion functions/interactions
   $(function(){
