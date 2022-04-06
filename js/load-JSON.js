@@ -17,7 +17,7 @@
  async function loadFellowshipsJson(ms) {
   
   // Source: https://www.youtube.com/watch?v=C3dfjyft_m4&ab_channel=JonathanSoma
-  await fetch("./fellowships.json")
+  await fetch("./package.json")
   .then(response => response.json())
   .then(FJSON => {
 
@@ -40,7 +40,7 @@
   //console.log(requirements_json_data);
   /**
    * Andres Orozco
-   * If the fellowship information from fellowships.json has loaded correctly, this runs and the website looks good. Otherwise,
+   * If the fellowship information from package.json has loaded correctly, this runs and the website looks good. Otherwise,
    * the website appears empty.
    */
   // Inspired by: https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
@@ -68,7 +68,7 @@
 
 /**
  * Andres Orozco
- * I've found that the best way to load the correct information from "fellowships.json" and THEN proceed with the rest of the program
+ * I've found that the best way to load the correct information from "package.json" and THEN proceed with the rest of the program
  * is to wrap pretty much the entire thing in an "async" function, THAT WAY I can use "await" to actually pause "the entire program".
  * Basically, if the entire program is in an async function, I can use "await" to halt the entire async function WHICH CONTAINS
  * everything. Otherwise in JavaScript, await just makes other synchronous code run while the async code does what it needs to do.

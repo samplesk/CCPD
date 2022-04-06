@@ -8,13 +8,13 @@ The format to follow is not as strict for sheet 1. Just make sure that when you 
 ## Format to follow when editing Sheet 2:
 Sheet 2 is invisible on the website, no one will need to see it except the code itself. 
 
-## Update the fellowships.json file
+## Update the package.json file
 1. Download this document as a Microsoft Excel file (.xlxs)
 2. Go to this URL: https://products.aspose.app/cells/conversion.
 3. Upload the fellowships-excel.xlxs file that you downloaded earlier.
 4. Switch the "Save As" option from PDF to JSON.
 5. Convert the excel file to json
 6. Click the "Download Now" option to download the newly converted file.
-7. Go to the fellowships.json file of this project.
-8. Copy and paste the contents of the fellowships-excel.json file into fellowships.json
+7. Go to the package.json file of this project.
+8. Copy and paste the contents of the fellowships-excel.json file into package.json
 9. Save and push your changes and you're done! :)
