@@ -117,7 +117,7 @@
         if(key == "description")
           fellowship_details += "<h3>" + line + "</h3>"
         else if (key == "website")
-          fellowship_details += "<element class = \"p1\">" + '<a href="' + line + '">' + "Visit This Fellowship Site" + "</a>" + "</element class = \"p1\">"
+          fellowship_details += "<element class = \"p1\">" + '<a href="' + line + '"target="_blank">' + "Visit This Fellowship Site" + "</a>" + "</element class = \"p1\">"
         else if(key != "other")
           fellowship_details += "<h4>" + newFellowshipKeys[key] + "</h4><div><p>" + line + "</p></div>"
         else
