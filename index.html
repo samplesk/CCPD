@@ -63,10 +63,8 @@
 
   <button class="collapsible">Requires Campus Endorsement or Nomination</button>
   <div id="requires_campus_endorsement_nomination" class="content">
-    <input type="checkbox" id="endorsement_nomination1" name="endorsement_nomination" value="1">
-    <label for="endorsement_nomination1">Yes</label><br>
-    <input type="checkbox" id="endorsement_nomination2" name="endorsement_nomination" value="2">
-    <label for="endorsement_nomination2">No</label><br>
+    <input type="checkbox" id="endorsement_nomination1" name="endorsement_nomination" oninput="onCheckEndorsement(event)" value="yes">Yes<br>
+    <input type="checkbox" id="endorsement_nomination2" name="endorsement_nomination" oninput="onCheckEndorsement(event)" value="no">No<br>
 </div>
   <div class = "icon-div">
     <img src="su_icon.png" alt="SU ICON" class="icon" width="100px" height="100px">
