@@ -87,14 +87,9 @@ h2 { /*Search fellowships*/
   color: black;
 }
 
-.icon {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
 .icon-div {
-  position: absolute;
-  bottom: 0px;
+  height:195px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
