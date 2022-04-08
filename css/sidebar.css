@@ -88,8 +88,8 @@ h2 { /*Search fellowships*/
 }
 
 .icon-div {
-  height:195px;
+  height: 150px;
   display: flex;
-  align-items: flex-end;
+  align-items:center;
   justify-content: center;
 }
