@@ -42,10 +42,8 @@
 
   <button class="collapsible">Location of Study</button>
   <div id="location" class="content">
-    <input type="checkbox" id="location1" name="location1" value="Domestic">
-    <label for="location1">Domestic</label><br>
-    <input type="checkbox" id="location2" name="location2" value="International">
-    <label for="location2">International</label><br>
+    <input type="checkbox" id="location1" name="location" oninput="onCheckLocation(event)" value=0>Domestic<br>
+    <input type="checkbox" id="location2" name="location" oninput="onCheckLocation(event)" value=1>International<br>
   </div>
 
   <button class="collapsible">Minimum GPA</button>
@@ -59,17 +57,15 @@
 
   <button class="collapsible">Requires US Citizen/National/Permanent Resident</button>
   <div id="citizenship" class="content">
-    <input type="checkbox" id="citizenship1" name="citizenship1" value="1">
-    <label for="citizenship1">Yes</label><br>
-    <input type="checkbox" id="citizenship2" name="citizenship2" value="2">
-    <label for="citizenship2">No</label><br>
+    <input type="checkbox" id="citizenship1" name="citizenship" value="1">Yes<br>
+    <input type="checkbox" id="citizenship2" name="citizenship" value="2">No<br>
 </div>
 
   <button class="collapsible">Requires Campus Endorsement or Nomination</button>
   <div id="requires_campus_endorsement_nomination" class="content">
-    <input type="checkbox" id="endorsement_nomination1" name="endorsement_nomination1" value="1">
+    <input type="checkbox" id="endorsement_nomination1" name="endorsement_nomination" value="1">
     <label for="endorsement_nomination1">Yes</label><br>
-    <input type="checkbox" id="endorsement_nomination2" name="endorsement_nomination2" value="2">
+    <input type="checkbox" id="endorsement_nomination2" name="endorsement_nomination" value="2">
     <label for="endorsement_nomination2">No</label><br>
 </div>
 <br> <br><br><br>

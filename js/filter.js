@@ -3,6 +3,7 @@
 var requirements = {}
 var gpas = {}
 var L_O_S = {}
+var Locations = {}
 async function createFilter(){
   /*creates fellowship dictionary with each fellowship name 
   as the key and then attaches the fellowship 
@@ -52,7 +53,14 @@ async function createFilter(){
      }
      //return item.level_of_study.toLowerCase()
    })
-  // console.log(L_O_S)
+   Locations = $.map(completeFellowshipList, function(item){
+     if(item.location_of_study.toLowerCase().match("domestic")){
+       return 0
+     } else {
+       return 1
+     }
+   })
+  // console.log(Locations)
 }
 
 //https://stackoverflow.com/questions/54695113/multi-condition-filtering-with-checkboxes-javascript
@@ -119,6 +127,25 @@ function onCheckGPA(event) {
     }
   }
 
+  /*
+  *
+  */
+ function onCheckLocation(event){
+   set_accordion_inactive()
+  var tempElem = event.target
+  for(var i = 0; i < element.length; i++){
+    if(tempElem.checked == true){
+      if((Locations[i] == tempElem.value) && element[i].style.display != "none"){
+        element[i].style.display = "block"
+      } else {
+        element[i].style.display = "none"
+      } 
+    }
+    if(tempElem.checked == false) {
+      element[i].style.display = "block"
+    }
+  }
+ }
   /*
   * Good to call before doing any sort of searching/filtering
   * sets the accordion to non-active everywhere so that no secitons 
