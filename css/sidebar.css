@@ -92,5 +92,9 @@ h2 { /*Search fellowships*/
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  bottom: 0;
+}
+
+.icon-div {
+  position: absolute;
+  bottom: 0px;
 }
