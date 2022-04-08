@@ -57,8 +57,8 @@
 
   <button class="collapsible">Requires US Citizen/National/Permanent Resident</button>
   <div id="citizenship" class="content">
-    <input type="checkbox" id="citizenship1" name="citizenship" value="1">Yes<br>
-    <input type="checkbox" id="citizenship2" name="citizenship" value="2">No<br>
+    <input type="checkbox" id="citizenship1" name="citizenship" oninput="onCheckCitizenship(event)" value="yes">Yes<br>
+    <input type="checkbox" id="citizenship2" name="citizenship" oninput="onCheckCitizenship(event)" value="no">No<br>
 </div>
 
   <button class="collapsible">Requires Campus Endorsement or Nomination</button>
