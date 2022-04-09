@@ -26,6 +26,8 @@
 
 <script>
   function scrollTo() {
+    setTimeout(() => {console.log("this is the first message")}, 3000);
+
     var firstURL = window.location.href
     var indexOfFragID = firstURL.indexOf("#")
     var theNum = firstURL.substring(indexOfFragID+1)
