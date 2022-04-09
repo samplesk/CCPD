@@ -26,19 +26,27 @@
 
 <script>
   function scrollTo() {
-    console.log("Hello")
-
     var firstURL = window.location.href
     var indexOfFragID = firstURL.indexOf("#")
     var theNum = firstURL.substring(indexOfFragID+1)
     var theInt = parseInt(theNum)
     var startingPanel = theInt - 1
 
-    console.log(firstURL)
-    console.log(indexOfFragID)
-    console.log(theNum)
-    console.log(theInt)
-    console.log(startingPanel)
+    console.log("firstURL: " + firstURL)
+    console.log("indexOfFragID: " + indexOfFragID)
+    console.log("theNum: " + theNum)
+    console.log("theInt: " + theInt)
+    console.log("startingPanel: " + startingPanel)
+
+
+
+    var element = document.getElementById("1");
+    console.log("Did ot work?: " + element)
+
+    element.scrollIntoView()
+    // $('html, body').animate({
+    //     scrollTop: currentHeaderID.offset().top - 100
+    //   }, 250);
   }
 </script>
 
