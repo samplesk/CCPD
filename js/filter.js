@@ -76,7 +76,7 @@ async function createFilter(){
        return "no"
      }
    })
-   console.log(Citizenships)
+  //  console.log(Citizenships)
 }
 
 //https://stackoverflow.com/questions/54695113/multi-condition-filtering-with-checkboxes-javascript
