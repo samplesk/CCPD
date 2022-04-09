@@ -41,8 +41,13 @@
 
 
     var element = document.getElementById("1");
+
+    var innerHTML = element.innerHTML
+    console.log("innerHTML: " + innerHTML)
+
     console.log("Did ot work?: " + element)
     console.log("Did ot work 2222?: " + element.getAttributeNames())
+    console.log("element id: " + element.getAttribute("id"))
 
     element.scrollIntoView()
     // $('html, body').animate({
