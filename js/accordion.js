@@ -128,21 +128,62 @@
     }).join("")
     }
   
+//   /*Attaches outer and inner layer to each other to create complete accordion object.
+//   Places accordion object to fellowship-accordion div placeholder from index.html.
+//   */
+//  // USED: https://jqueryui.com/accordion/ for accordion functions/interactions
+//   $(function(){
+//   //console.log(html)
+//   $("#fellowship-accordion").append(html)
+//   //$("#fellowship-accordion").children("div").accordion()
+//   $("#fellowship-accordion").accordion({
+//     collapsible: true,
+//     active: startingPanel,
+//     autoHeight: false,
+//     /**
+//      * Andres Orozco
+//      * This code specifies that when a panel is activated in the accordion, change the URL
+//      */
+//     activate: function( event, ui ) {
+//       /**
+//        * This Stack OVerflow post exactly fixed the issue of closing and reopening the same panel
+//        * https://stackoverflow.com/questions/20062540/jquery-accordion-scrolls-to-top-on-activate-then-breaks-on-second-click
+//        */
+//       if(!ui.newHeader.length) {
+//         // https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-url-with-javascript-without-page-r
+//         history.pushState("", document.title, window.location.pathname + window.location.search);
+//       }else {
+//         // Gets the activated panel
+//         var currentHeaderID = ui.newHeader
+
+//         // Get the one-based ID of the panel in the accordion
+//         var fellowShipNumberOneBased = currentHeaderID[0].id
+
+//         // Change the URL to match "#" + theNumber
+//         window.location.hash = "#" + fellowShipNumberOneBased
+//       }
+//     }
+// })
+
+
+//   })
+
   /*Attaches outer and inner layer to each other to create complete accordion object.
-  Places accordion object to fellowship-accordion div placeholder from index.html.
+  Places accordion object to fellowship-accordion div placeholder from search-page.html.
   */
  // USED: https://jqueryui.com/accordion/ for accordion functions/interactions
-  $(function(){
-  //console.log(html)
+ $(function(){
   $("#fellowship-accordion").append(html)
-  //$("#fellowship-accordion").children("div").accordion()
   $("#fellowship-accordion").accordion({
     collapsible: true,
     active: startingPanel,
-    autoHeight: false,
+    //This should be  unnecessary, but leave here just in case
+    // autoHeight: 500,
+    
     /**
      * Andres Orozco
-     * This code specifies that when a panel is activated in the accordion, change the URL
+     * This code specifies the behavior of the accordion and website on panel activation (click). Change the URL but do not reload
+     * page.
      */
     activate: function( event, ui ) {
       /**
@@ -150,23 +191,37 @@
        * https://stackoverflow.com/questions/20062540/jquery-accordion-scrolls-to-top-on-activate-then-breaks-on-second-click
        */
       if(!ui.newHeader.length) {
+
         // https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-url-with-javascript-without-page-r
         history.pushState("", document.title, window.location.pathname + window.location.search);
+
       }else {
+        
         // Gets the activated panel
         var currentHeaderID = ui.newHeader
-
         // Get the one-based ID of the panel in the accordion
         var fellowShipNumberOneBased = currentHeaderID[0].id
 
+      // Scroll the website to essentally center the active panel. That is, move the active panel to top of page, then scroll up
+      // just a little to "center" it and make it not only look appealing, but also allow the user to click 2 preceding or following
+      // panels. If the panel takes up the entire screen, it not only does not look as nice, but loses some functionality.
+      $('html, body').animate({
+        scrollTop: currentHeaderID.offset().top - 100
+      }, 250);
+
         // Change the URL to match "#" + theNumber
         window.location.hash = "#" + fellowShipNumberOneBased
+
       }
     }
+  })
+
+  
+
+
+
 })
 
-
-  })
   //console.log(html)
 
 }

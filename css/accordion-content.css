@@ -23,5 +23,5 @@
     }
   }
   #fellowship-accordion .ui-accordion-content {
-    max-height: 45%;
+    max-height: /*45%*/71%;
 }
