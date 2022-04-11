@@ -51,6 +51,8 @@ async function createFilter(){
        return 1
      }
    })
+   
+   //
    Locations = $.map(completeFellowshipList, function(item){
      if(item.location_of_study.toLowerCase().match("domestic")){
        return 0
@@ -58,6 +60,8 @@ async function createFilter(){
        return 1
      }
    })
+   
+   //
    Citizenships = $.map(completeFellowshipList, function(item){
      if(item.citizenship.toLowerCase().match("yes")){
        return "yes"
@@ -65,6 +69,8 @@ async function createFilter(){
        return "no"
      }
    })
+
+   //
    Endorsement = $.map(completeFellowshipList, function(item){
      if(item.requires_campus_endorsement_nomination.toLowerCase().match("yes")){
        return "yes"
@@ -92,6 +98,9 @@ function removePanel(a) {
   return false;
 }
 
+/*
+* Check the GPA for each fellowship 
+*/
 function onCheckGPA(event) {
   // set accordion elements to not-active
   set_accordion_inactive()
@@ -103,20 +112,23 @@ function onCheckGPA(event) {
     if(tempElem.checked == true){
     // check the stored gpa of the element, see if its larger than the checkbox value or null, and make sure it is not already hidden
       if ((gpas[i] >= tempElem.value.toLowerCase() || gpas[i] == 0) && element[i].style.display != "none") {
-          element[i].style.display = "block"
-       } else {
-          element[i].style.display = "none"
-        }
-    }
-      // restore all of the accordion elements if the box gets unchecked
-      if(tempElem.checked == false){
+        //return the element to the page
         element[i].style.display = "block"
+      } else {
+        //does not display the element
+        element[i].style.display = "none"
       }
+    // restore all of the accordion elements if the box gets unchecked
+    }
+    // restore all of the accordion elements if the box gets unchecked
+    if(tempElem.checked == false){
+      element[i].style.display = "block"
     }
   }
+}
 
   /*
-  * Check the level of study for each fellowship for filtering
+  * Check the level of study for each fellowship
   */
   function onCheckLevel(event) {
     set_accordion_inactive() // set all accordion elements inactive for filtering
@@ -146,16 +158,17 @@ function onCheckGPA(event) {
   for(var i = 0; i < element.length; i++){
     if(tempElem.checked == true){
       if((Locations[i] == tempElem.value) && element[i].style.display != "none"){
-        element[i].style.display = "block"
+        element[i].style.display = "block" //show element
       } else {
-        element[i].style.display = "none"
+        element[i].style.display = "none" //hide element
       } 
     }
     if(tempElem.checked == false) {
-      element[i].style.display = "block"
+      element[i].style.display = "block" //show element
     }
   }
  }
+
  /*
  *
  */
@@ -165,16 +178,17 @@ function onCheckCitizenship(event){
   for(var i = 0; i < element.length; i++){
     if(tempElem.checked == true){
       if((Citizenships[i] == tempElem.value) && element[i].style.display != "none"){
-        element[i].style.display = "block"
+        element[i].style.display = "block" //show element
       } else {
-        element[i].style.display = "none"
+        element[i].style.display = "none" //hide element
       }
     }
     if(tempElem.checked == false){
-      element[i].style.display = "block"
+      element[i].style.display = "block" //show element
     }
   }
 }
+
 /*
 *
 */
@@ -184,13 +198,13 @@ function onCheckEndorsement(event){
   for(var i = 0; i < element.length; i++){
     if(tempElem.checked == true){
       if((Endorsement[i] == tempElem.value) && element[i].style.display != "none"){
-        element[i].style.display = "block"
+        element[i].style.display = "block" //show element
       } else {
-        element[i].style.display = "none"
+        element[i].style.display = "none" //hide element
       }
     }
     if(tempElem.checked == false){
-      element[i].style.display = "block"
+      element[i].style.display = "block" //show element
     }
   }
 }
