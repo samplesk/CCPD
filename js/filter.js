@@ -98,6 +98,7 @@ function removePanel(a) {
   return false;
 }
 
+
 /*
 * Check the GPA for each fellowship 
 */
@@ -111,7 +112,7 @@ function onCheckGPA(event) {
     // if checkbox is checked
     if(tempElem.checked == true){
     // check the stored gpa of the element, see if its larger than the checkbox value or null, and make sure it is not already hidden
-      if ((gpas[i] >= tempElem.value.toLowerCase() || gpas[i] == 0) && element[i].style.display != "none") {
+      if ((gpas[i] >= tempElem.value || gpas[i] == 0) && element[i].style.display != "none") {
         //return the element to the page
         element[i].style.display = "block"
       } else {
@@ -123,7 +124,7 @@ function onCheckGPA(event) {
     // restore all of the accordion elements if the box gets unchecked
     if(tempElem.checked == false){
       element[i].style.display = "block"
-    }
+      }
   }
 }
 
