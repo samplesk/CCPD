@@ -31,7 +31,7 @@ sub- or category-headlines. */
     src: url(fonts/playfair-displayzip/PlayfairDisplay-Italic.otf);
   }
   
-  p { /*fellowship details*/
+  p { /*fellowship details, under all attribute labels*/
     font-size: 18px;
     font-family: "HK Grotesk",Arial,sans-serif;
     font-weight: 400;
@@ -40,7 +40,7 @@ sub- or category-headlines. */
   }
   
 
-  .p1{ /* "Visit Scholarship site:" */
+  .p1{ /* "Visit This Fellowship Site" */
     font-size: 18px;
     font-family: "HK Grotesk",Arial,sans-serif;
     font-weight: 400;
@@ -50,7 +50,7 @@ sub- or category-headlines. */
   }
 
 
-  h1{ /* fellowship name*/
+  h1{ /*Fellowship Names*/
     font-size: 18px;
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
     font-weight: 400;
@@ -58,9 +58,9 @@ sub- or category-headlines. */
     padding-left:30px;
   }
 
- /*h2 = Search Felowships in sidebar.css*/
+ /*h2 is the text Search Felowships in sidebar.css*/
 
-  h3{ /*fellowship details header*/
+  h3{ /*fellowship details*/
     font-size: 18px;
     font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
     font-weight: 350;
@@ -68,7 +68,7 @@ sub- or category-headlines. */
     padding-bottom: 20px;
   }
 
-  h4{ /*section header of fellowship details*/
+  h4{ /*section headers for each attribute*/
     font-size: 20px;
     font-family: "HK Grotesk",Arial,sans-serif;
     font-weight: 700;
