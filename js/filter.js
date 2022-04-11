@@ -50,7 +50,6 @@ async function createFilter(){
        // otherwise assume graduate and assign 1
        return 1
      }
-     //return item.level_of_study.toLowerCase()
    })
    Locations = $.map(completeFellowshipList, function(item){
      if(item.location_of_study.toLowerCase().match("domestic")){
