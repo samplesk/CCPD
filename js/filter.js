@@ -35,11 +35,11 @@ async function createFilter(){
   }
   // mapping for gpas of all fellowships to ease filtering
   // puts all the gpas into an array for easier comparisons
-   gpas = $.map(requirementList, function(item){
-    if(!item.min_gpa){ // if gpa is null just set it to 0
-      item.min_gpa = 0.0
+   gpas = $.map(completeFellowshipList, function(item){
+    if(!item.gpa){ // if gpa is null just set it to 0
+      item.gpa = 0.0
     }
-     return item.min_gpa
+     return item.gpa
    })
    // maps all of the levels of study for each fellowship
    L_O_S = $.map(completeFellowshipList, function(item){
