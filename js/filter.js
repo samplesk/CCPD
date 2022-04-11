@@ -23,11 +23,8 @@ async function createFilter(){
   cleanRequirements();
   function cleanRequirements(){
     var html = $.map(requirements, function(body, fellowship) {
-      //console.log(fellowship);
       return $.map(body, function(item, i) {
             return $.map(item, function(line, key){
-              //  console.log(key)
-              //  console.log(line)
                 if(line != null && typeof line === 'string'){
                   line = line.toLowerCase();
                 }
@@ -76,7 +73,6 @@ async function createFilter(){
        return "no"
      }
    })
-  //  console.log(Citizenships)
 }
 
 //https://stackoverflow.com/questions/54695113/multi-condition-filtering-with-checkboxes-javascript
@@ -85,7 +81,6 @@ async function createFilter(){
 const completeFellowshipList = fellowships_json_data;
 const requirementList = requirements_json_data;
 const element = document.getElementsByTagName('h1');
-//const input = document.getElementById("txt-search");
 
 
 //<a onclick='removePanel(this)' style='float:right'>X</a>
