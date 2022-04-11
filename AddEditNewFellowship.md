@@ -10,7 +10,7 @@ Sheet 2 is invisible on the website, no one will need to see it except the code 
 
 ## Update the package.json file
 1. Download this document as a Microsoft Excel file (.xlxs)
-2. Go to this URL: https://products.aspose.app/cells/conversion.
+2. Go to this URL: https://products.aspose.app/cells/conversion
 3. Upload the fellowships-excel.xlxs file that you downloaded earlier.
 4. Switch the "Save As" option from PDF to JSON.
 5. Convert the excel file to json
