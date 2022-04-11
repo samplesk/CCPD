@@ -37,7 +37,6 @@
     if(fellowships_json_data.length != requirements_json_data.length)
       console.log("Amount of fellowships in Sheet1 do not match amount of fellowships in Sheet2")
   })
-  //console.log(requirements_json_data);
   /**
    * Andres Orozco
    * If the fellowship information from package.json has loaded correctly, this runs and the website looks good. Otherwise,

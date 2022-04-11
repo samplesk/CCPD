@@ -34,7 +34,6 @@
       fellowships[item.name].push(item) // adds the information for that fellowship
   })
   
-  // console.log(fellowships);
 
  /*Dictionaries that contain all fellowship keys, 
  and the name you actually want it to be labeled as on the web page
@@ -68,11 +67,9 @@
     content inside each fellowship object is still empty at this point.
     Does display on page
   */
-  //console.log(fellowships)
   var html = $.map(fellowships, function(body, fellowship) {
   return "<h1 id='" + fellowship_ids[fellowship] + "'>" + fellowship + "</h1>" + // fellowship name header
     "<div>" + $.map(body, function(item, i) {
-        //console.log(i, item)
         return format(item)
     }).join("") + "</div>"
   }).join("")
@@ -127,46 +124,6 @@
       return fellowship_details
     }).join("")
     }
-  
-//   /*Attaches outer and inner layer to each other to create complete accordion object.
-//   Places accordion object to fellowship-accordion div placeholder from index.html.
-//   */
-//  // USED: https://jqueryui.com/accordion/ for accordion functions/interactions
-//   $(function(){
-//   //console.log(html)
-//   $("#fellowship-accordion").append(html)
-//   //$("#fellowship-accordion").children("div").accordion()
-//   $("#fellowship-accordion").accordion({
-//     collapsible: true,
-//     active: startingPanel,
-//     autoHeight: false,
-//     /**
-//      * Andres Orozco
-//      * This code specifies that when a panel is activated in the accordion, change the URL
-//      */
-//     activate: function( event, ui ) {
-//       /**
-//        * This Stack OVerflow post exactly fixed the issue of closing and reopening the same panel
-//        * https://stackoverflow.com/questions/20062540/jquery-accordion-scrolls-to-top-on-activate-then-breaks-on-second-click
-//        */
-//       if(!ui.newHeader.length) {
-//         // https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-url-with-javascript-without-page-r
-//         history.pushState("", document.title, window.location.pathname + window.location.search);
-//       }else {
-//         // Gets the activated panel
-//         var currentHeaderID = ui.newHeader
-
-//         // Get the one-based ID of the panel in the accordion
-//         var fellowShipNumberOneBased = currentHeaderID[0].id
-
-//         // Change the URL to match "#" + theNumber
-//         window.location.hash = "#" + fellowShipNumberOneBased
-//       }
-//     }
-// })
-
-
-//   })
 
   /*Attaches outer and inner layer to each other to create complete accordion object.
   Places accordion object to fellowship-accordion div placeholder from search-page.html.
@@ -215,13 +172,5 @@
       }
     }
   })
-
-  
-
-
-
 })
-
-  //console.log(html)
-
 }
