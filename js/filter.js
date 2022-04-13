@@ -106,26 +106,22 @@ function onCheckGPA(event) {
   // set accordion elements to not-active
   set_accordion_inactive()
   // get element that was clicked on (the checkbox)
-  var tempElem = event.target
-  // for each element in the accordion
-  for (var i = 0; i < element.length; i++) {
-    // if checkbox is checked
-    if(tempElem.checked == true){
-    // check the stored gpa of the element, see if its larger than the checkbox value or null, and make sure it is not already hidden
-      if ((gpas[i] >= tempElem.value || gpas[i] == 0) && element[i].style.display != "none") {
-        //return the element to the page
-        element[i].style.display = "block"
-      } else {
-        //does not display the element
-        element[i].style.display = "none"
-      }
-    // restore all of the accordion elements if the box gets unchecked
-    }
-    // restore all of the accordion elements if the box gets unchecked
-    if(tempElem.checked == false){
-      element[i].style.display = "block"
-      }
-  }
+
+  const gpaButtons = document.querySelectorAll('input[name="gpa"]');
+
+    for(const gpaButton of gpaButtons){
+              gpaButton.addEventListener('change', function(e){
+              if (this.checked){
+                for(var i = 0; i < element.length; i++){
+                  if((gpas[i] >= this.value || gpas[i] == 0)){
+                    element[i].style.display = "block";
+                  } else {
+                    element[i].style.display = "none";
+                  }
+                }
+              }
+            });
+        }
 }
 
   /*
@@ -133,81 +129,105 @@ function onCheckGPA(event) {
   */
   function onCheckLevel(event) {
     set_accordion_inactive() // set all accordion elements inactive for filtering
-    var tempElem = event.target // get checkbox
-    for(var i = 0; i < element.length; i++){ // check each fellowship
-      if(tempElem.checked == true) { // if the box is checked
-        // currently just checking the first letter against the value of 
-        // level_of_study to make filtering from 'undergrad' & 'graduate'
-        if((L_O_S[i] == tempElem.value) && element[i].style.display != "none"){
-          element[i].style.display = "block" // show if matching
-        } else {
-          element[i].style.display = "none" // hide if not
+
+    const levelButtons = document.querySelectorAll('input[name="level_of_study"]');
+
+    for(const levelButton of levelButtons){
+              levelButton.addEventListener('change', function(e){
+              if (this.checked){
+                for(var i = 0; i < element.length; i++){
+                  if(L_O_S[i] == this.value){
+                    element[i].style.display = "block";
+                  } else {
+                    element[i].style.display = "none";
+                  }
+                }
+              }
+            });
         }
-      }
-      if(tempElem.checked == false){ // if box gets unchecked show all
-        element[i].style.display = "block"
-      }
-    }
   }
 
   /*
   *
   */
  function onCheckLocation(event){
-   set_accordion_inactive()
-  var tempElem = event.target
-  for(var i = 0; i < element.length; i++){
-    if(tempElem.checked == true){
-      if((Locations[i] == tempElem.value) && element[i].style.display != "none"){
-        element[i].style.display = "block" //show element
-      } else {
-        element[i].style.display = "none" //hide element
-      } 
-    }
-    if(tempElem.checked == false) {
-      element[i].style.display = "block" //show element
-    }
-  }
+   set_accordion_inactive() // set all accordion elements inactive for filtering
+
+   const locationButtons = document.querySelectorAll('input[name="location"]');
+
+   for(const locationButton of locationButtons){
+            locationButton.addEventListener('change', function(e){
+             if (this.checked){
+               for(var i = 0; i < element.length; i++){
+                 if(Locations[i] == this.value){
+                   element[i].style.display = "block";
+                 } else {
+                   element[i].style.display = "none";
+                 }
+               }
+             }
+           });
+       }
  }
 
  /*
  *
  */
 function onCheckCitizenship(event){
-  set_accordion_inactive()
-  var tempElem = event.target
-  for(var i = 0; i < element.length; i++){
-    if(tempElem.checked == true){
-      if((Citizenships[i] == tempElem.value) && element[i].style.display != "none"){
-        element[i].style.display = "block" //show element
-      } else {
-        element[i].style.display = "none" //hide element
+
+  set_accordion_inactive() // set all accordion elements inactive for filtering
+
+  const citizenshipButtons = document.querySelectorAll('input[name="citizenship"]');
+
+  for(const citizenshipButton of citizenshipButtons){
+            citizenshipButton.addEventListener('change', function(e){
+            if (this.checked){
+              for(var i = 0; i < element.length; i++){
+                if(Citizenships[i] == this.value){
+                  element[i].style.display = "block";
+                } else {
+                  element[i].style.display = "none";
+                }
+              }
+            }
+          });
       }
-    }
-    if(tempElem.checked == false){
-      element[i].style.display = "block" //show element
-    }
-  }
 }
 
 /*
 *
 */
 function onCheckEndorsement(event){
-  set_accordion_inactive()
-  var tempElem = event.target
-  for(var i = 0; i < element.length; i++){
-    if(tempElem.checked == true){
-      if((Endorsement[i] == tempElem.value) && element[i].style.display != "none"){
-        element[i].style.display = "block" //show element
-      } else {
-        element[i].style.display = "none" //hide element
+  set_accordion_inactive() // set all accordion elements inactive for filtering
+
+  const endorsementButtons = document.querySelectorAll('input[name="endorsement_nomination"]');
+
+  for(const endorsementButton of endorsementButtons){
+            endorsementButton.addEventListener('change', function(e){
+            if (this.checked){
+              for(var i = 0; i < element.length; i++){
+                if(Endorsement[i] == this.value){
+                  element[i].style.display = "block";
+                } else {
+                  element[i].style.display = "none";
+                }
+              }
+            }
+          });
       }
-    }
-    if(tempElem.checked == false){
-      element[i].style.display = "block" //show element
-    }
-  }
+  // var tempElem = event.target
+  // for(var i = 0; i < element.length; i++){
+  //   if(tempElem.checked == true){
+  //     if((Endorsement[i] == tempElem.value) && element[i].style.display != "none"){
+  //       element[i].style.display = "block" //show element
+  //     } else {
+  //       element[i].style.display = "none" //hide element
+  //     }
+  //   }
+  //   if(tempElem.checked == false){
+  //     element[i].style.display = "block" //show element
+  //   }
+  // }
 }
   /*
   * Good to call before doing any sort of searching/filtering
