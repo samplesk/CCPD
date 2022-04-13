@@ -113,7 +113,7 @@ function onCheckGPA(event) {
               gpaButton.addEventListener('change', function(e){
               if (this.checked){
                 for(var i = 0; i < element.length; i++){
-                  if((gpas[i] >= this.value || gpas[i] == 0)){
+                  if((gpas[i] >= this.value || gpas[i] == 0) && element[i].style.display != "none"){
                     element[i].style.display = "block";
                   } else {
                     element[i].style.display = "none";
@@ -136,7 +136,7 @@ function onCheckGPA(event) {
               levelButton.addEventListener('change', function(e){
               if (this.checked){
                 for(var i = 0; i < element.length; i++){
-                  if(L_O_S[i] == this.value){
+                  if(L_O_S[i] == this.value && element[i].style.display != "none"){
                     element[i].style.display = "block";
                   } else {
                     element[i].style.display = "none";
@@ -159,7 +159,7 @@ function onCheckGPA(event) {
             locationButton.addEventListener('change', function(e){
              if (this.checked){
                for(var i = 0; i < element.length; i++){
-                 if(Locations[i] == this.value){
+                 if(Locations[i] == this.value && element[i].style.display != "none"){
                    element[i].style.display = "block";
                  } else {
                    element[i].style.display = "none";
@@ -183,7 +183,7 @@ function onCheckCitizenship(event){
             citizenshipButton.addEventListener('change', function(e){
             if (this.checked){
               for(var i = 0; i < element.length; i++){
-                if(Citizenships[i] == this.value){
+                if(Citizenships[i] == this.value && element[i].style.display != "none"){
                   element[i].style.display = "block";
                 } else {
                   element[i].style.display = "none";
@@ -206,7 +206,7 @@ function onCheckEndorsement(event){
             endorsementButton.addEventListener('change', function(e){
             if (this.checked){
               for(var i = 0; i < element.length; i++){
-                if(Endorsement[i] == this.value){
+                if(Endorsement[i] == this.value && element[i].style.display != "none"){
                   element[i].style.display = "block";
                 } else {
                   element[i].style.display = "none";
@@ -215,19 +215,6 @@ function onCheckEndorsement(event){
             }
           });
       }
-  // var tempElem = event.target
-  // for(var i = 0; i < element.length; i++){
-  //   if(tempElem.checked == true){
-  //     if((Endorsement[i] == tempElem.value) && element[i].style.display != "none"){
-  //       element[i].style.display = "block" //show element
-  //     } else {
-  //       element[i].style.display = "none" //hide element
-  //     }
-  //   }
-  //   if(tempElem.checked == false){
-  //     element[i].style.display = "block" //show element
-  //   }
-  // }
 }
   /*
   * Good to call before doing any sort of searching/filtering
