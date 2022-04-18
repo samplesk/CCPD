@@ -106,17 +106,16 @@ function onCheckGPA(event) {
   // set accordion elements to not-active
   set_accordion_inactive()
   // get element that was clicked on (the checkbox)
-
   const gpaButtons = document.querySelectorAll('input[name="gpa"]');
-
     for(const gpaButton of gpaButtons){
               gpaButton.addEventListener('change', function(e){
               if (this.checked){
                 for(var i = 0; i < element.length; i++){
+                  //if the gpa is greater than the value clicked or equal to 0, AND the element is being displayed
                   if((gpas[i] >= this.value || gpas[i] == 0) && element[i].style.display != "none"){
-                    element[i].style.display = "block";
+                    element[i].style.display = "block"; //display
                   } else {
-                    element[i].style.display = "none";
+                    element[i].style.display = "none"; //do not display
                   }
                 }
               }
@@ -129,17 +128,17 @@ function onCheckGPA(event) {
   */
   function onCheckLevel(event) {
     set_accordion_inactive() // set all accordion elements inactive for filtering
-
+    // get element that was clicked on (the checkbox)
     const levelButtons = document.querySelectorAll('input[name="level_of_study"]');
-
     for(const levelButton of levelButtons){
               levelButton.addEventListener('change', function(e){
               if (this.checked){
                 for(var i = 0; i < element.length; i++){
+                  //if the level of study is the same as the value clicked AND the element is being displayed 
                   if(L_O_S[i] == this.value && element[i].style.display != "none"){
-                    element[i].style.display = "block";
+                    element[i].style.display = "block";//display
                   } else {
-                    element[i].style.display = "none";
+                    element[i].style.display = "none";//do not display
                   }
                 }
               }
@@ -152,17 +151,17 @@ function onCheckGPA(event) {
   */
  function onCheckLocation(event){
    set_accordion_inactive() // set all accordion elements inactive for filtering
-
+   // get element that was clicked on (the checkbox)
    const locationButtons = document.querySelectorAll('input[name="location"]');
-
    for(const locationButton of locationButtons){
             locationButton.addEventListener('change', function(e){
              if (this.checked){
                for(var i = 0; i < element.length; i++){
-                 if(Locations[i] == this.value && element[i].style.display != "none"){
-                   element[i].style.display = "block";
+                  //if the location is the same as the value clicked AND the element is being displayed 
+                  if(Locations[i] == this.value && element[i].style.display != "none"){
+                    element[i].style.display = "block";//display
                  } else {
-                   element[i].style.display = "none";
+                    element[i].style.display = "none";//do not display
                  }
                }
              }
@@ -174,19 +173,18 @@ function onCheckGPA(event) {
  *
  */
 function onCheckCitizenship(event){
-
   set_accordion_inactive() // set all accordion elements inactive for filtering
-
+  // get element that was clicked on (the checkbox)
   const citizenshipButtons = document.querySelectorAll('input[name="citizenship"]');
-
   for(const citizenshipButton of citizenshipButtons){
             citizenshipButton.addEventListener('change', function(e){
             if (this.checked){
               for(var i = 0; i < element.length; i++){
+                //if the level of study is the same as the value clicked AND the element is being displayed 
                 if(Citizenships[i] == this.value && element[i].style.display != "none"){
-                  element[i].style.display = "block";
+                  element[i].style.display = "block";//display
                 } else {
-                  element[i].style.display = "none";
+                  element[i].style.display = "none";//do not display
                 }
               }
             }
@@ -199,17 +197,18 @@ function onCheckCitizenship(event){
 */
 function onCheckEndorsement(event){
   set_accordion_inactive() // set all accordion elements inactive for filtering
-
+  // get element that was clicked on (the checkbox)
   const endorsementButtons = document.querySelectorAll('input[name="endorsement_nomination"]');
-
   for(const endorsementButton of endorsementButtons){
             endorsementButton.addEventListener('change', function(e){
             if (this.checked){
               for(var i = 0; i < element.length; i++){
+                //yes or no option if an endorsement is required
+                //match what was clicked with the fellowship info AND the element is being displayed 
                 if(Endorsement[i] == this.value && element[i].style.display != "none"){
-                  element[i].style.display = "block";
+                  element[i].style.display = "block";//display
                 } else {
-                  element[i].style.display = "none";
+                  element[i].style.display = "none";//do not display
                 }
               }
             }
