@@ -1,4 +1,4 @@
-//http://jsfiddle.net/6wYzw/41/
+//https://jsfiddle.net/6wYzw/41/
 //https://stackoverflow.com/questions/8796472/filtering-with-checkboxes-using-jquery
 var requirements = {}
 var gpas = {}
@@ -93,7 +93,7 @@ const element = document.getElementsByTagName('h1');
 
 //<a onclick='removePanel(this)' style='float:right'>X</a>
 //Removes panel when x link is clicked
-//USED: http://jsfiddle.net/gh1e4moy/
+//USED: https://jsfiddle.net/gh1e4moy/
 //USED: https://jqueryui.com/upgrade-guide/1.10/#added-ability-to-add-remove-panels
 function removePanel(a) {
   $(a).parent().next().remove();
