@@ -9,18 +9,13 @@
 
   /**
    * Andres Orozco
-   * This code sets up which panel to start at. So theoretically, when the website is up, CCPD staff can click the panel they want to send
+   * This code sets up which panel to start at. So when the website is up, CCPD staff can click the panel they want to send
    * someone, copy the URL, send it, they can paste it into their browser, and the website will open up with that panel.
    */
    var firstURL = window.location.href
    var indexOfFragID = firstURL.indexOf("#")
-   var theNum = firstURL.substring(indexOfFragID+1)
-
-   var theNumSpaces = theNum.replaceAll("%20", " ")
-  //  console.log("theNumSpaces = " + theNumSpaces)
-
-   var theInt = parseInt(theNum)
-   var startingPanel = theInt - 1
+   var hashFellowship = firstURL.substring(indexOfFragID+1)
+   var hashMinusSpaces = hashFellowship.replaceAll("%20", " ")
 
   /*creates fellowship dictionary with each fellowship name 
   as the key and then attaches the fellowship 
@@ -37,13 +32,7 @@
   else
       fellowships[item.name].push(item) // adds the information for that fellowship
   })
-  var startingPanel = fellowship_ids[theNumSpaces] - 1
-  // console.log("STARTING PANEL = " + startingPanel)
-
-  // console.log("startingPanel = " + startingPanel)
-
-  // var temp = document.getElementById("1");
-  // console.log(temp)
+  var startingPanel = fellowship_ids[hashMinusSpaces] - 1
 
   var fellowship_ids_reversed = {}
   fellowships_json_data.forEach(function(item) {
@@ -187,11 +176,6 @@
 
         // window.location.hash = "#" + fellowShipNumberOneBased
         window.location.hash = "#" + fellowshipName
-        
-        var firstURL = window.location.href
-        // console.log("currentURL = " + firstURL)
-        var indexOfFragID = firstURL.indexOf("#")
-        var theNum = firstURL.substring(indexOfFragID+1)
 
       }
     }
