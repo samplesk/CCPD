@@ -69,7 +69,7 @@ There are 2 options for the values of this column:
 - No
   - The fellowship does NOT require the student to have a certain citizenship/residency status to qualify.
 ```
-- If the fellowship does not specify this information, then leave that value blank.
+- If the fellowship does not specify this information, leave that value blank.
 
 #### requires_campus_endorsement: whether or not the fellowship requires the student to be endorsed or nominated by the university:
 There are 2 options for the values of this column:
@@ -79,15 +79,25 @@ There are 2 options for the values of this column:
 - No
   - The fellowship does NOT require the student to be nominated or endorsed to qualify.
 ```
-- If the fellowship does not specify this information, then leave that value blank.
+- If the fellowship does not specify this information, leave that value blank.
 
-## Update the package.json file
-1. Download this document as a Microsoft Excel file (.xlxs)
-2. Go to this URL: https://products.aspose.app/cells/conversion
-3. Upload the fellowships-excel.xlxs file that you downloaded earlier.
-4. Switch the "Save As" option from PDF to JSON.
-5. Convert the excel file to json
-6. Click the "Download Now" option to download the newly converted file.
-7. Go to the package.json file of this project.
-8. Copy and paste the contents of the fellowships-excel.json file into package.json
-9. Save and push your changes and you're done! :)
+## Finalize Your Changes
+Now that the Google Sheets have been updated, it is time to update the actual webpage with these changes:
+
+1. Download the package Google Sheets as an excel spreadsheet file (package.xlxs)
+2. Go to this URL: https://products.aspose.app/cells/conversion.
+3. Upload the package.xlxs file that you downloaded on step 1.
+4. Switch the “Save As” option from PDF to JSON.
+5. Convert the excel file to JSON
+![IMAGE: Convert the excel file to JSON](manual-images/converter.png)
+6. Click the “Download Now” option to download the newly converted package.json file.
+7. Make sure the file is named package.json. If it is not, rename it to package.json.
+8. Go to the Github page for this project: https://github.com/samplesk/CCPD
+9. Make sure the branch is on main, if it’s not, switch it to main:
+10. Go to Add file
+11. Click Upload files:
+![IMAGE: Upload Files](manual-images/main.png)
+12. Drag and drop your package.json file into our project folder to replace it.
+13. Click “Commit Changes”.
+![IMAGE: Upload Files](manual-images/commit.png)
+Done, the changes should now be fully deployed and displayed on the webpage :)
