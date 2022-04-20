@@ -1,4 +1,4 @@
-//http://jsfiddle.net/6wYzw/41/
+//https://jsfiddle.net/6wYzw/41/
 //https://stackoverflow.com/questions/8796472/filtering-with-checkboxes-using-jquery
 var requirements = {}
 var gpas = {}
@@ -7,6 +7,8 @@ var Locations = {}
 var Citizenships = {}
 var Endorsement = {}
 async function createFilter(){
+
+
   /*creates fellowship dictionary with each fellowship name 
   as the key and then attaches the fellowship 
   information to each fellowship name (like a hash table)
@@ -41,6 +43,7 @@ async function createFilter(){
     }
      return item.gpa
    })
+
    // maps all of the levels of study for each fellowship
    L_O_S = $.map(completeFellowshipList, function(item){
      // if it contains under, assume it is undergrad and assign 0
@@ -52,7 +55,7 @@ async function createFilter(){
      }
    })
    
-   //
+   //location of study domestic 0, otherwise 1
    Locations = $.map(completeFellowshipList, function(item){
      if(item.location_of_study.toLowerCase().match("domestic")){
        return 0
@@ -61,7 +64,7 @@ async function createFilter(){
      }
    })
    
-   //
+   //citizenship requirement Y/N
    Citizenships = $.map(completeFellowshipList, function(item){
      if(item.citizenship.toLowerCase().match("yes")){
        return "yes"
@@ -70,7 +73,7 @@ async function createFilter(){
      }
    })
 
-   //
+   //requires campus endorsement Y/N
    Endorsement = $.map(completeFellowshipList, function(item){
      if(item.requires_campus_endorsement_nomination.toLowerCase().match("yes")){
        return "yes"
@@ -90,7 +93,7 @@ const element = document.getElementsByTagName('h1');
 
 //<a onclick='removePanel(this)' style='float:right'>X</a>
 //Removes panel when x link is clicked
-//USED: http://jsfiddle.net/gh1e4moy/
+//USED: https://jsfiddle.net/gh1e4moy/
 //USED: https://jqueryui.com/upgrade-guide/1.10/#added-ability-to-add-remove-panels
 function removePanel(a) {
   $(a).parent().next().remove();
@@ -106,108 +109,123 @@ function onCheckGPA(event) {
   // set accordion elements to not-active
   set_accordion_inactive()
   // get element that was clicked on (the checkbox)
-  var tempElem = event.target
-  // for each element in the accordion
-  for (var i = 0; i < element.length; i++) {
-    // if checkbox is checked
-    if(tempElem.checked == true){
-    // check the stored gpa of the element, see if its larger than the checkbox value or null, and make sure it is not already hidden
-      if ((gpas[i] >= tempElem.value || gpas[i] == 0) && element[i].style.display != "none") {
-        //return the element to the page
-        element[i].style.display = "block"
-      } else {
-        //does not display the element
-        element[i].style.display = "none"
-      }
-    // restore all of the accordion elements if the box gets unchecked
-    }
-    // restore all of the accordion elements if the box gets unchecked
-    if(tempElem.checked == false){
-      element[i].style.display = "block"
-      }
-  }
+  const gpaButtons = document.querySelectorAll('input[name="gpa"]');
+    for(const gpaButton of gpaButtons){
+              gpaButton.addEventListener('change', function(e){
+              //if the gpaButton is checked
+              if (this.checked){
+                //loop through the length of the element
+                for(var i = 0; i < element.length; i++){
+                  //if the gpa is greater than the value clicked or equal to 0, AND the element is being displayed
+                  if((gpas[i] >= this.value || gpas[i] == 0) && element[i].style.display != "none"){
+                    element[i].style.display = "block"; //display
+                  } else {
+                    element[i].style.display = "none"; //do not display
+                  }
+                }
+              } else {
+                //if the gpaButton is not checked
+              }
+            });
+        }
 }
 
   /*
   * Check the level of study for each fellowship
+  * Depending on what the user clicks fellowships are displayed or removed
   */
   function onCheckLevel(event) {
     set_accordion_inactive() // set all accordion elements inactive for filtering
-    var tempElem = event.target // get checkbox
-    for(var i = 0; i < element.length; i++){ // check each fellowship
-      if(tempElem.checked == true) { // if the box is checked
-        // currently just checking the first letter against the value of 
-        // level_of_study to make filtering from 'undergrad' & 'graduate'
-        if((L_O_S[i] == tempElem.value) && element[i].style.display != "none"){
-          element[i].style.display = "block" // show if matching
-        } else {
-          element[i].style.display = "none" // hide if not
+    // get element that was clicked on (the checkbox)
+    const levelButtons = document.querySelectorAll('input[name="level_of_study"]');
+    for(const levelButton of levelButtons){
+              levelButton.addEventListener('change', function(e){
+              if (this.checked){
+                for(var i = 0; i < element.length; i++){
+                  //if the level of study is the same as the value clicked AND the element is being displayed 
+                  if(L_O_S[i] == this.value && element[i].style.display != "none"){
+                    element[i].style.display = "block";//display
+                  } else {
+                    element[i].style.display = "none";//do not display
+                  }
+                }
+              }
+            });
         }
-      }
-      if(tempElem.checked == false){ // if box gets unchecked show all
-        element[i].style.display = "block"
-      }
-    }
   }
 
   /*
-  *
+  * 
   */
  function onCheckLocation(event){
-   set_accordion_inactive()
-  var tempElem = event.target
-  for(var i = 0; i < element.length; i++){
-    if(tempElem.checked == true){
-      if((Locations[i] == tempElem.value) && element[i].style.display != "none"){
-        element[i].style.display = "block" //show element
-      } else {
-        element[i].style.display = "none" //hide element
-      } 
-    }
-    if(tempElem.checked == false) {
-      element[i].style.display = "block" //show element
-    }
-  }
+   set_accordion_inactive() // set all accordion elements inactive for filtering
+   // get element that was clicked on (the checkbox)
+   const locationButtons = document.querySelectorAll('input[name="location"]');
+   for(const locationButton of locationButtons){
+            locationButton.addEventListener('change', function(e){
+             if (this.checked){
+               for(var i = 0; i < element.length; i++){
+                  //if the location is the same as the value clicked AND the element is being displayed 
+                  if(Locations[i] == this.value && element[i].style.display != "none"){
+                    element[i].style.display = "block";//display
+                 } else {
+                    element[i].style.display = "none";//do not display
+                 }
+               }
+             }
+           });
+       }
  }
 
  /*
  *
  */
 function onCheckCitizenship(event){
-  set_accordion_inactive()
-  var tempElem = event.target
-  for(var i = 0; i < element.length; i++){
-    if(tempElem.checked == true){
-      if((Citizenships[i] == tempElem.value) && element[i].style.display != "none"){
-        element[i].style.display = "block" //show element
-      } else {
-        element[i].style.display = "none" //hide element
+  set_accordion_inactive() // set all accordion elements inactive for filtering
+  // get element that was clicked on (the checkbox)
+  const citizenshipButtons = document.querySelectorAll('input[name="citizenship"]');
+  for(const citizenshipButton of citizenshipButtons){
+            citizenshipButton.addEventListener('change', function(e){
+            if (this.checked){
+              for(var i = 0; i < element.length; i++){
+                //if the level of study is the same as the value clicked AND the element is being displayed 
+                if(Citizenships[i] == this.value && element[i].style.display != "none"){
+                  element[i].style.display = "block";//display
+                } else {
+                  element[i].style.display = "none";//do not display
+                }
+              }
+            }
+          });
       }
-    }
-    if(tempElem.checked == false){
-      element[i].style.display = "block" //show element
-    }
-  }
 }
 
 /*
 *
 */
 function onCheckEndorsement(event){
-  set_accordion_inactive()
-  var tempElem = event.target
-  for(var i = 0; i < element.length; i++){
-    if(tempElem.checked == true){
-      if((Endorsement[i] == tempElem.value) && element[i].style.display != "none"){
-        element[i].style.display = "block" //show element
-      } else {
-        element[i].style.display = "none" //hide element
+  set_accordion_inactive() // set all accordion elements inactive for filtering
+  // get element that was clicked on (the checkbox)
+  const endorsementButtons = document.querySelectorAll('input[name="endorsement_nomination"]');
+  for(const endorsementButton of endorsementButtons){
+            endorsementButton.addEventListener('change', function(e){
+            if (this.checked){
+              for(var i = 0; i < element.length; i++){
+                //yes or no option if an endorsement is required
+                //match what was clicked with the fellowship info AND the element is being displayed 
+                if(Endorsement[i] == this.value && element[i].style.display != "none"){
+                  element[i].style.display = "block";//display
+                } else {
+                  element[i].style.display = "none";//do not display
+                }
+                // restore all of the accordion elements if the box gets unchecked
+                if(tempElem.checked == false){
+                  element[i].style.display = "block"
+                }
+              }
+            }
+          });
       }
-    }
-    if(tempElem.checked == false){
-      element[i].style.display = "block" //show element
-    }
-  }
 }
   /*
   * Good to call before doing any sort of searching/filtering
@@ -222,9 +240,8 @@ function onCheckEndorsement(event){
    jQuery('.fellowship-accordion, .childAccordion').accordion({
     collapsible: true,
     active: false,
-    heightStyle: 'content'
-    ,
-    // actually sets all of the accordion children to non-active
+    heightStyle: 'content',
+    //sets all of the accordion children to non-active
     beforeActivate: function (e, ui) {
         if($(this).hasClass('fellowship-accordion')){
             $('.childAccordion').accordion("option", "active", -1);
