@@ -20,44 +20,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>
+
 <!--
-<body> -->
-  
+  Andres Orozco
+
+  This body onload code scrolls you to the active panel on startup. So if you click a link and theres 1000 panels, it will take you
+  to the right one.
+-->
 <body onload= "scrollTo()">
 
 <script>
   function scrollTo() {
-    setTimeout(() => {console.log("this is the first message")}, 3000);
+    
+  var fellowships = {}
+  var fellowship_ids = {}
+  fellowships_json_data.forEach(function(item) {
+  if(!(item.name in fellowships)){
+    fellowships[item.name] = [item] // adds new fellowship name to array
+    fellowship_ids[item.name] = item.fellowship_id
+  }
+  else
+      fellowships[item.name].push(item) // adds the information for that fellowship
+  })
 
-    var firstURL = window.location.href
-    var indexOfFragID = firstURL.indexOf("#")
-    var theNum = firstURL.substring(indexOfFragID+1)
-    var theInt = parseInt(theNum)
-    var startingPanel = theInt - 1
+   var firstURL = window.location.href
+   var indexOfFragID = firstURL.indexOf("#")
+   var hashFellowship = firstURL.substring(indexOfFragID+1)
+   var hashMinusSpaces = hashFellowship.replaceAll("%20", " ")
 
-    console.log("firstURL: " + firstURL)
-    console.log("indexOfFragID: " + indexOfFragID)
-    console.log("theNum: " + theNum)
-    console.log("theInt: " + theInt)
-    console.log("startingPanel: " + startingPanel)
+   var hashCorrespondingID = fellowship_ids[hashMinusSpaces]
+   var fellowshipElement = document.getElementById(hashCorrespondingID);
 
-
-
-    var element = document.getElementById("1");
-
-    var innerHTML = element.innerHTML
-    console.log("innerHTML: " + innerHTML)
-
-    console.log("Did ot work?: " + element)
-    console.log("Did ot work 2222?: " + element.getAttributeNames())
-    console.log("element id: " + element.getAttribute("id"))
-
+   fellowshipElement.scrollIntoView()
+   
   }
 </script>
 
   <ul>
     <li><a class="index" href="index.html">Browse Fellowships</a></li>
-    <li><a href="https://www.southwestern.edu/academics/fellowships-scholarships/"target="_blank">Return to SU Fellowships & Scholarship Home</a></li>
+    <li><a href="https://www.southwestern.edu/academics/fellowships-scholarships/"target="_blank">CCPD Fellowships Site</a></li>
+    <li><a href="https://www.southwestern.edu/academics/fellowships-scholarships/get-help-fellowship-advising/"target="_blank">Get Help</a></li>
     <li><a class="about-page" href = "about.html">About</a></li>
   
   </ul>
@@ -66,67 +68,37 @@
 
     <h2>Filter</h2>
 
-  <button class="collapsible">
-    <div class="tooltip">
-      <img src="i-icon.png" alt="MORE INFO" class="info_icon" width="15px" height="15px">
-      <span class="tooltiptext">
-        The level of study the fellowship can be used for.
-      </span>
-    </div>
-    Level of Study</button>
+  <button class="collapsible">Level of Study</button>
   <div id="level_of_study" class="content">
-    <input type="radio" id="level_of_study1" name="level_of_study" oninput="onCheckLevel(event)" value=0>Undergraduate<br>
-    <input type="radio" id="level_of_study2" name="level_of_study" oninput="onCheckLevel(event)" value=1>Graduate<br>
+    <input type="checkbox" id="level_of_study1" name="level_of_study" oninput="onCheckLevel(event)" value=0>Undergraduate<br>
+    <input type="checkbox" id="level_of_study2" name="level_of_study" oninput="onCheckLevel(event)" value=1>Graduate<br>
   </div>
 
-  <button class="collapsible">
-    <div class="tooltip">
-      <img src="i-icon.png" alt="MORE INFO" class="info_icon" width="15px" height="15px">
-      <span class="tooltiptext">
-        The fellowship can be used domestically or internationally.
-      </div>
-    Location of Study</button>
+  <button class="collapsible">Location of Study</button>
   <div id="location" class="content">
-    <input type="radio" id="location1" name="location" oninput="onCheckLocation(event)" value=0>Domestic<br>
-    <input type="radio" id="location2" name="location" oninput="onCheckLocation(event)" value=1>International<br>
+    <input type="checkbox" id="location1" name="location" oninput="onCheckLocation(event)" value=0>Domestic<br>
+    <input type="checkbox" id="location2" name="location" oninput="onCheckLocation(event)" value=1>International<br>
   </div>
 
-  <button class="collapsible">
-    <div class="tooltip">
-      <img src="i-icon.png" alt="MORE INFO" class="info_icon" width="15px" height="15px">
-      <span class="tooltiptext">The minimum GPA a student needs to qualify for a fellowship.</span>
-    </div>
-    Minimum GPA</button>
+  <button class="collapsible">Minimum GPA</button>
   <div id="GPA" class="content">
-    <input type="radio" id="gpa1" name="gpa" oninput="onCheckGPA(event)" value="2.0">2.0+<br>
-    <input type="radio" id="gpa2" name="gpa" oninput="onCheckGPA(event)" value="2.5">2.5+<br>
-    <input type="radio" id="gpa3" name="gpa" oninput="onCheckGPA(event)" value="3.0">3.0+<br>
-    <input type="radio" id="gpa4" name="gpa" oninput="onCheckGPA(event)" value="3.5">3.5+<br>
-    <input type="radio" id="gpa5" name="gpa" oninput="onCheckGPA(event)" value="3.7">3.7+<br>
+    <input type="checkbox" id="gpa1" name="gpa" oninput="onCheckGPA(event)" value="2.0">2.0+<br>
+    <input type="checkbox" id="gpa2" name="gpa" oninput="onCheckGPA(event)" value="2.5">2.5+<br>
+    <input type="checkbox" id="gpa3" name="gpa" oninput="onCheckGPA(event)" value="3.0">3.0+<br>
+    <input type="checkbox" id="gpa4" name="gpa" oninput="onCheckGPA(event)" value="3.5">3.5+<br>
+    <input type="checkbox" id="gpa5" name="gpa" oninput="onCheckGPA(event)" value="3.7">3.7+<br>
 </div>
 
-  <button class="collapsible">
-    <div class="tooltip">
-      <img src="i-icon.png" alt="MORE INFO" class="info_icon" width="15px" height="15px">
-      <span class="tooltiptext">
-        The fellowship requires citenship or residency status.
-      </span>
-    </div>
-    Requires US Citizen/National/Permanent Resident</button>
+  <button class="collapsible">Requires US Citizen/National/Permanent Resident</button>
   <div id="citizenship" class="content">
-    <input type="radio" id="citizenship1" name="citizenship" oninput="onCheckCitizenship(event)" value="yes">Yes<br>
-    <input type="radio" id="citizenship2" name="citizenship" oninput="onCheckCitizenship(event)" value="no">No<br>
+    <input type="checkbox" id="citizenship1" name="citizenship" oninput="onCheckCitizenship(event)" value="yes">Yes<br>
+    <input type="checkbox" id="citizenship2" name="citizenship" oninput="onCheckCitizenship(event)" value="no">No<br>
 </div>
 
-  <button class="collapsible">
-    <div class="tooltip">
-      <img src="i-icon.png" alt="MORE INFO" class="info_icon" width="15px" height="15px">
-      <span class="tooltiptext">The fellowship requires an endorsement or nomination.</span>
-    </div>
-    Requires Campus Endorsement or Nomination</button>
+  <button class="collapsible">Requires Campus Endorsement or Nomination</button>
   <div id="requires_campus_endorsement_nomination" class="content">
-    <input type="radio" id="endorsement_nomination1" name="endorsement_nomination" oninput="onCheckEndorsement(event)" value="yes">Yes<br>
-    <input type="radio" id="endorsement_nomination2" name="endorsement_nomination" oninput="onCheckEndorsement(event)" value="no">No<br>
+    <input type="checkbox" id="endorsement_nomination1" name="endorsement_nomination" oninput="onCheckEndorsement(event)" value="yes">Yes<br>
+    <input type="checkbox" id="endorsement_nomination2" name="endorsement_nomination" oninput="onCheckEndorsement(event)" value="no">No<br>
 </div>
   <div class = "icon-div">
     <img src="su_icon.png" alt="SU ICON" class="icon" width="100px" height="100px">

@@ -9,14 +9,13 @@
 
   /**
    * Andres Orozco
-   * This code sets up which panel to start at. So theoretically, when the website is up, CCPD staff can click the panel they want to send
+   * This code sets up which panel to start at. So when the website is up, CCPD staff can click the panel they want to send
    * someone, copy the URL, send it, they can paste it into their browser, and the website will open up with that panel.
    */
    var firstURL = window.location.href
    var indexOfFragID = firstURL.indexOf("#")
-   var theNum = firstURL.substring(indexOfFragID+1)
-   var theInt = parseInt(theNum)
-   var startingPanel = theInt - 1
+   var hashFellowship = firstURL.substring(indexOfFragID+1)
+   var hashMinusSpaces = hashFellowship.replaceAll("%20", " ")
 
   /*creates fellowship dictionary with each fellowship name 
   as the key and then attaches the fellowship 
@@ -33,7 +32,12 @@
   else
       fellowships[item.name].push(item) // adds the information for that fellowship
   })
-  
+  var startingPanel = fellowship_ids[hashMinusSpaces] - 1
+
+  var fellowship_ids_reversed = {}
+  fellowships_json_data.forEach(function(item) {
+    fellowship_ids_reversed[item.fellowship_id] = item.name
+    })
 
  /*Dictionaries that contain all fellowship keys, 
  and the name you actually want it to be labeled as on the web page
@@ -156,6 +160,7 @@
         
         // Gets the activated panel
         var currentHeaderID = ui.newHeader
+        
         // Get the one-based ID of the panel in the accordion
         var fellowShipNumberOneBased = currentHeaderID[0].id
 
@@ -167,7 +172,10 @@
       }, 250);
 
         // Change the URL to match "#" + theNumber
-        window.location.hash = "#" + fellowShipNumberOneBased
+        var fellowshipName = fellowship_ids_reversed[fellowShipNumberOneBased]
+
+        // window.location.hash = "#" + fellowShipNumberOneBased
+        window.location.hash = "#" + fellowshipName
 
       }
     }
