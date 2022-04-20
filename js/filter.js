@@ -6,6 +6,7 @@ var L_O_S = {}
 var Locations = {}
 var Citizenships = {}
 var Endorsement = {}
+
 async function createFilter(){
 
 
@@ -89,7 +90,25 @@ async function createFilter(){
 const completeFellowshipList = fellowships_json_data;
 const requirementList = requirements_json_data;
 const element = document.getElementsByTagName('h1');
+console.log(element)
 
+const radioButtons = document.querySelectorAll('[name="gpa"],[name="location"],[name="level_of_study"],[name="citizenship"],[name="endorsement_nomination"]');
+    //  el_filterable = document.querySelectorAll('')
+const applyFilter = () => {
+  const checked_fellowships = [...radioButtons].filter(item => item.checked && item.value);
+  const filters = [...checked_fellowships].map(item => item.value);
+  const filtered_fellowships = [...element].filter(item => {
+    const props = item.getAttribute(value).trim().split(/\s+/);
+    return filters.every(fi => props.includes(fi))
+  });
+  for ( let i = 0; i < element.length; i++){
+    element[i].style.display = "none";
+  }
+//  element.forEach(item => item.classList.add('is-hidden'));
+  filtered_fellowships.forEach(item => item.classList.remove('is-hidden'));
+}
+radioButtons.forEach(button => button.addEventListener('change',applyFilter));
+applyFilter();
 
 //<a onclick='removePanel(this)' style='float:right'>X</a>
 //Removes panel when x link is clicked
@@ -100,6 +119,7 @@ function removePanel(a) {
   $(a).parent().remove();
   return false;
 }
+
 
 
 /*
