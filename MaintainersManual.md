@@ -6,16 +6,16 @@ When editing or adding a fellowship to the SU CCPD fellowships site, it is impor
 ## Format to follow when editing Sheet 1:
 Sheet 1 is how the fellowship information will be displayed to the website visitors. The format to follow is pretty lenient for this sheet:
 
-###Strict guidelines to follow:
-####** Do NOT change the column names**
+### Strict guidelines to follow:
+#### ** Do NOT change the column names**
 ```
-- fellowship_id: the fellowship’s unique identifier
-  - Make sure that when adding a new fellowship the fellowship_id column has a numerical value that no other fellowship has already been assigned.
-  - We recommend following the increasing numerical order that has already been followed with the other fellowship_id values.
-- Make sure that when removing a fellowship the entire row is deleted.
-- If a fellowship does not offer any information about a column, leave the value blank under that column.
+* fellowship_id: the fellowship’s unique identifier
+    * Make sure that when adding a new fellowship the fellowship_id column has a numerical value that no other fellowship has already been assigned.
+    * We recommend following the increasing numerical order that has already been followed with the other fellowship_id values.
+* Make sure that when removing a fellowship the entire row is deleted.
+* If a fellowship does not offer any information about a column, leave the value blank under that column.
 ```
-###Lenient guidelines:
+### Lenient guidelines:
 ```
 The values on this sheet will be displayed on the webpage as is, so enter the values however you want them displayed:
 - Grammar
