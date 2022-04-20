@@ -15,6 +15,10 @@
    var firstURL = window.location.href
    var indexOfFragID = firstURL.indexOf("#")
    var theNum = firstURL.substring(indexOfFragID+1)
+
+   var theNumSpaces = theNum.replaceAll("%20", " ")
+  //  console.log("theNumSpaces = " + theNumSpaces)
+
    var theInt = parseInt(theNum)
    var startingPanel = theInt - 1
 
@@ -33,7 +37,18 @@
   else
       fellowships[item.name].push(item) // adds the information for that fellowship
   })
-  
+  var startingPanel = fellowship_ids[theNumSpaces] - 1
+  // console.log("STARTING PANEL = " + startingPanel)
+
+  // console.log("startingPanel = " + startingPanel)
+
+  // var temp = document.getElementById("1");
+  // console.log(temp)
+
+  var fellowship_ids_reversed = {}
+  fellowships_json_data.forEach(function(item) {
+    fellowship_ids_reversed[item.fellowship_id] = item.name
+    })
 
  /*Dictionaries that contain all fellowship keys, 
  and the name you actually want it to be labeled as on the web page
@@ -156,6 +171,7 @@
         
         // Gets the activated panel
         var currentHeaderID = ui.newHeader
+        
         // Get the one-based ID of the panel in the accordion
         var fellowShipNumberOneBased = currentHeaderID[0].id
 
@@ -167,10 +183,25 @@
       }, 250);
 
         // Change the URL to match "#" + theNumber
-        window.location.hash = "#" + fellowShipNumberOneBased
+        var fellowshipName = fellowship_ids_reversed[fellowShipNumberOneBased]
+
+        // window.location.hash = "#" + fellowShipNumberOneBased
+        window.location.hash = "#" + fellowshipName
+        
+        var firstURL = window.location.href
+        // console.log("currentURL = " + firstURL)
+        var indexOfFragID = firstURL.indexOf("#")
+        var theNum = firstURL.substring(indexOfFragID+1)
 
       }
     }
   })
 })
+
+// window.scrollBy(0, 500);
+
+// console.log("startingPanel = " + startingPanel)
+// var str = startingPanel.toString()
+
+// document.getElementById("1");
 }
