@@ -88,20 +88,16 @@ Now that the Google Sheets have been updated, it is time to update the actual we
 2. Go to this URL: https://products.aspose.app/cells/conversion.
 3. Upload the package.xlxs file that you downloaded on step 1.
 4. Switch the “Save As” option from PDF to JSON.
-5. Convert the excel file to JSON
-<br/>
+5. Convert the excel file to JSON  
 ![IMAGE: Convert the excel file to JSON](manual-images/converter.png)
 6. Click the “Download Now” option to download the newly converted package.json file.
 7. Make sure the file is named package.json. If it is not, rename it to package.json.
 8. Go to the Github page for this project: https://github.com/samplesk/CCPD
 9. Make sure the branch is on main, if it’s not, switch it to main:
 10. Go to Add file
-11. Click Upload files:
-<br/>
+11. Click Upload files:  
 ![IMAGE: Upload Files](manual-images/main.png)
 12. Drag and drop your package.json file into our project folder to replace it.
-13. Click “Commit Changes”.
-<br/>
-![IMAGE: Upload Files](manual-images/commit.png)
-<br/>
+13. Click “Commit Changes”.  
+![IMAGE: Upload Files](manual-images/commit.png)  
 Done, the changes should now be fully deployed and displayed on the webpage :)
