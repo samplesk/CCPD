@@ -8,20 +8,20 @@ Sheet 1 is how the fellowship information will be displayed to the website visit
 
 ### Strict guidelines to follow:
 #### ** Do NOT change the column names**
-```
+
 - fellowship_id: the fellowship’s unique identifier
      - Make sure that when adding a new fellowship the fellowship_id column has a numerical value that no other fellowship has already been assigned.
      - We recommend following the increasing numerical order that has already been followed with the other fellowship_id values.
 - Make sure that when removing a fellowship the entire row is deleted.
 - If a fellowship does not offer any information about a column, leave the value blank under that column.
-```
+
 ### Lenient guidelines:
-```
+
 The values on this sheet will be displayed on the webpage as is, so enter the values however you want them displayed:
 - Grammar
 - Punctuation
 - Capitalization
-```
+
 
 ## Format to follow when editing Sheet 2:
 Sheet 2 is how the fellowship information will be read by the code. It will not be displayed on the website or viewed by the user. The format is very strict for this sheet, and it is vital that it is followed, or the webpage will not work properly:
