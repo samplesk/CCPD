@@ -186,6 +186,9 @@
  * Andres Orozco
  * 
  * This code only runs when the page has been reloaded: it resets the page to the active panel
+ * 
+ * Check the answer by Mointy
+ * https://stackoverflow.com/questions/5004978/check-if-page-gets-reloaded-or-refreshed-in-javascript
  */
  if (sessionStorage.getItem('reloaded') != null) {
   // console.log('page was reloaded');
