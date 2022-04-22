@@ -29,12 +29,18 @@ Sheet 2 is how the fellowship information will be read by the code. It will not 
 ### ** Do not change the column names**
 
 #### fellowship_id: the fellowship’s unique identifier
-- This column should automatically update with changes to sheet 1 with this formula that has already been applied to Google Sheets: =arrayformula(Sheet1!A:A).
+- This column should automatically update with changes to sheet 1 with this formula that has already been applied to Google Sheets: 
+```
+=arrayformula(Sheet1!A:A).
+```
 - Make sure that the formula is still there and that the values match between both sheet 1 and sheet 2.
 - This value should NEVER be blank.
 
 #### name: the fellowship’s name
-- This column should automatically update with changes to sheet 1 with this formula that has already been applied to Google Sheets: =arrayformula(Sheet1!B:B).
+- This column should automatically update with changes to sheet 1 with this formula that has already been applied to Google Sheets: 
+```
+=arrayformula(Sheet1!B:B).
+```
 - Make sure that the formula is still there and that the values match between both sheet 1 and sheet 2.
 - This value should NEVER be blank.
 
