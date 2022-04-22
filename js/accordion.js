@@ -182,10 +182,37 @@
   })
 })
 
-// window.scrollBy(0, 500);
+/**
+ * Andres Orozco
+ * 
+ * This code only runs when the page has been reloaded: it resets the page to the active panel
+ * 
+ * Check the answer by Mointy
+ * https://stackoverflow.com/questions/5004978/check-if-page-gets-reloaded-or-refreshed-in-javascript
+ */
+ if (sessionStorage.getItem('reloaded') != null) {
+  // console.log('page was reloaded');
 
-// console.log("startingPanel = " + startingPanel)
-// var str = startingPanel.toString()
+  var currentURL = window.location.href
+  var indexOfFragID = firstURL.indexOf("#")
+  var hashFellowship = firstURL.substring(indexOfFragID+1)
+  var hashMinusSpaces = hashFellowship.replaceAll("%20", " ")
 
-// document.getElementById("1");
+  var hashCorrespondingID = -1
+  hashCorrespondingID = fellowship_ids[hashMinusSpaces]
+  var fellowshipElement = document.getElementById(hashCorrespondingID);
+
+
+  setTimeout(() => {
+    // console.log("Delayed for 1 second.");
+    
+    fellowshipElement.scrollIntoView()
+  }, "50")
+
+
+} else {
+  // console.log('page was not reloaded');
+}
+
+sessionStorage.setItem('reloaded', 'yes'); // could be anything
 }
