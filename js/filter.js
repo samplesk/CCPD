@@ -6,7 +6,9 @@ var L_O_S = {}
 var Locations = {}
 var Citizenships = {}
 var Endorsement = {}
-
+const completeFellowshipList = fellowships_json_data;
+const requirementList = requirements_json_data;
+const element = document.getElementsByTagName('h1');
 async function createFilter(){
 
 
@@ -82,171 +84,87 @@ async function createFilter(){
        return "no"
      }
    })
-}
-
-//https://stackoverflow.com/questions/54695113/multi-condition-filtering-with-checkboxes-javascript
-
-
-const completeFellowshipList = fellowships_json_data;
-const requirementList = requirements_json_data;
-const element = document.getElementsByTagName('h1');
-console.log(element)
-
-const radioButtons = document.querySelectorAll('[name="gpa"],[name="location"],[name="level_of_study"],[name="citizenship"],[name="endorsement_nomination"]');
-    //  el_filterable = document.querySelectorAll('')
-const applyFilter = () => {
-  const checked_fellowships = [...radioButtons].filter(item => item.checked && item.value);
-  const filters = [...checked_fellowships].map(item => item.value);
-  const filtered_fellowships = [...element].filter(item => {
-    const props = item.getAttribute(value).trim().split(/\s+/);
-    return filters.every(fi => props.includes(fi))
-  });
-  for ( let i = 0; i < element.length; i++){
-    element[i].style.display = "none";
-  }
-//  element.forEach(item => item.classList.add('is-hidden'));
-  filtered_fellowships.forEach(item => item.classList.remove('is-hidden'));
-}
-radioButtons.forEach(button => button.addEventListener('change',applyFilter));
-applyFilter();
-
-//<a onclick='removePanel(this)' style='float:right'>X</a>
-//Removes panel when x link is clicked
-//USED: https://jsfiddle.net/gh1e4moy/
-//USED: https://jqueryui.com/upgrade-guide/1.10/#added-ability-to-add-remove-panels
-function removePanel(a) {
-  $(a).parent().next().remove();
-  $(a).parent().remove();
-  return false;
-}
-
-
-
-/*
-* Check the GPA for each fellowship 
-*/
-function onCheckGPA(event) {
-  // set accordion elements to not-active
+   /*
+   * Colton Stone, 4/22/2022
+   * All of the following code is used to allow the radio boxed to filter together.
+   */
+  const accord = document.querySelectorAll('#fellowship-accordion')
+  const radioButtons = Array.prototype.slice.call(document.querySelectorAll("input[type='radio']"))
+  /*
+  * This function is what does the filtering. It takes each radio button then
+  * gets its label/name and value. Using this we store the button if it is checked, 
+  * Next we make arrays of the fellowship requirements and their corresponding values
+  * we loop through the whole list of fellowships, and for each fellowship we check 
+  * all of its requirements. For all of the requirements we check to see if there is
+  * a checkbox that matches a requirement. If one is found we make sure that the values are 
+  * appropriate and that it is the correct requirement. Then we push the fellowship index
+  * into an array that will be used to hide items accordingly. 
+  */
+  const applyFilter = () => {
+    // get current checked buttons
+    const checked_buttons = [...radioButtons].filter(item => item.checked && item.value)
+    // store checked buttons in an easier formant with labels
+    var checkArr = {}
+    checkArr = $.map(checked_buttons, function(item){
+      let name = item.name
+      let value = item.value
+       return {
+         'button': name,
+         'value': value
+        }
+     });
+     // get all keys and values of our fellowships
+  const fellowship_list_keys = [...completeFellowshipList].map(item => Object.keys(item));
+  const fellowship_list_values = [...completeFellowshipList].map(item => Object.values(item));
+  var index_to_hide = [];
+  // for all of the fellowships
+    for(let i = 0; i < completeFellowshipList.length; i++){
+      // and all of the requirements in each fellowship
+      for(let j = 0; j < fellowship_list_keys[i].length; j++){
+        // see if any of the buttons match a requirement
+        for( let k  = 0; k < checkArr.length;k++){
+          // if it matches check the type of data it is
+          if(fellowship_list_keys[i][j].includes(checkArr[k].button)){
+            // for strings make sure they match and that the button matches the requirement name
+            if(typeof fellowship_list_values[i][j] == "string"){
+              if(fellowship_list_values[i][j].includes(checkArr[k].value) && fellowship_list_keys[i][j] == checkArr[k].button){
+              //  do nothing so it stays visible
+              }else {
+                index_to_hide.push(i)
+              }
+              // for numbers make sure the value is equal to or greate than the button value
+              // leave zeros in for fellowships that do not specify a gpa requirement
+            } else if(typeof fellowship_list_values[i][j] == "number"){
+                if(fellowship_list_values[i][j] >= checkArr[k].value || fellowship_list_values[i][j] === 0){
+                //  do nothing so it stays visible
+                } else {
+                  index_to_hide.push(i)
+              }
+            }  
+          }
+        }
+      }
+    }
+  //set accordion inactive to prepare to filter
   set_accordion_inactive()
-  // get element that was clicked on (the checkbox)
-  const gpaButtons = document.querySelectorAll('input[name="gpa"]');
-    for(const gpaButton of gpaButtons){
-              gpaButton.addEventListener('change', function(e){
-              //if the gpaButton is checked
-              if (this.checked){
-                //loop through the length of the element
-                for(var i = 0; i < element.length; i++){
-                  //if the gpa is greater than the value clicked or equal to 0, AND the element is being displayed
-                  if((gpas[i] >= this.value || gpas[i] == 0) && element[i].style.display != "none"){
-                    element[i].style.display = "block"; //display
-                  } else {
-                    element[i].style.display = "none"; //do not display
-                  }
-                }
-              } else {
-                //if the gpaButton is not checked
-              }
-            });
-        }
-}
-
-  /*
-  * Check the level of study for each fellowship
-  * Depending on what the user clicks fellowships are displayed or removed
-  */
-  function onCheckLevel(event) {
-    set_accordion_inactive() // set all accordion elements inactive for filtering
-    // get element that was clicked on (the checkbox)
-    const levelButtons = document.querySelectorAll('input[name="level_of_study"]');
-    for(const levelButton of levelButtons){
-              levelButton.addEventListener('change', function(e){
-              if (this.checked){
-                for(var i = 0; i < element.length; i++){
-                  //if the level of study is the same as the value clicked AND the element is being displayed 
-                  if(L_O_S[i] == this.value && element[i].style.display != "none"){
-                    element[i].style.display = "block";//display
-                  } else {
-                    element[i].style.display = "none";//do not display
-                  }
-                }
-              }
-            });
-        }
+  // for all elements see if it is meant to be hidden or not
+  // then display accordingly
+  for(let i = 0; i < element.length;i++){
+    if(index_to_hide.includes(i)){
+      element[i].style.display = "none"
+    } else {
+      element[i].style.display = "block"
+    }
   }
-
-  /*
-  * 
-  */
- function onCheckLocation(event){
-   set_accordion_inactive() // set all accordion elements inactive for filtering
-   // get element that was clicked on (the checkbox)
-   const locationButtons = document.querySelectorAll('input[name="location"]');
-   for(const locationButton of locationButtons){
-            locationButton.addEventListener('change', function(e){
-             if (this.checked){
-               for(var i = 0; i < element.length; i++){
-                  //if the location is the same as the value clicked AND the element is being displayed 
-                  if(Locations[i] == this.value && element[i].style.display != "none"){
-                    element[i].style.display = "block";//display
-                 } else {
-                    element[i].style.display = "none";//do not display
-                 }
-               }
-             }
-           });
-       }
- }
-
- /*
- *
- */
-function onCheckCitizenship(event){
-  set_accordion_inactive() // set all accordion elements inactive for filtering
-  // get element that was clicked on (the checkbox)
-  const citizenshipButtons = document.querySelectorAll('input[name="citizenship"]');
-  for(const citizenshipButton of citizenshipButtons){
-            citizenshipButton.addEventListener('change', function(e){
-            if (this.checked){
-              for(var i = 0; i < element.length; i++){
-                //if the level of study is the same as the value clicked AND the element is being displayed 
-                if(Citizenships[i] == this.value && element[i].style.display != "none"){
-                  element[i].style.display = "block";//display
-                } else {
-                  element[i].style.display = "none";//do not display
-                }
-              }
-            }
-          });
-      }
+  // reset array to empty so that there is not overlap
+  // on multiple runs.
+  index_to_hide = []
+  }
+  // give each radio button an event listener
+  radioButtons.forEach(radioButton => radioButton.addEventListener('change',applyFilter));
+  applyFilter();
 }
 
-/*
-*
-*/
-function onCheckEndorsement(event){
-  set_accordion_inactive() // set all accordion elements inactive for filtering
-  // get element that was clicked on (the checkbox)
-  const endorsementButtons = document.querySelectorAll('input[name="endorsement_nomination"]');
-  for(const endorsementButton of endorsementButtons){
-            endorsementButton.addEventListener('change', function(e){
-            if (this.checked){
-              for(var i = 0; i < element.length; i++){
-                //yes or no option if an endorsement is required
-                //match what was clicked with the fellowship info AND the element is being displayed 
-                if(Endorsement[i] == this.value && element[i].style.display != "none"){
-                  element[i].style.display = "block";//display
-                } else {
-                  element[i].style.display = "none";//do not display
-                }
-                // restore all of the accordion elements if the box gets unchecked
-                if(tempElem.checked == false){
-                  element[i].style.display = "block"
-                }
-              }
-            }
-          });
-      }
-}
   /*
   * Good to call before doing any sort of searching/filtering
   * sets the accordion to non-active everywhere so that no secitons 
