@@ -17,6 +17,7 @@
  async function loadFellowshipsJson(ms) {
   
   // Source: https://www.youtube.com/watch?v=C3dfjyft_m4&ab_channel=JonathanSoma
+  // Fetches a JSON file from a server (which will contain this website's files and info)
   await fetch("./package.json")
   .then(response => response.json())
   .then(FJSON => {
