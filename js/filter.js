@@ -1,11 +1,6 @@
 //https://jsfiddle.net/6wYzw/41/
 //https://stackoverflow.com/questions/8796472/filtering-with-checkboxes-using-jquery
 var requirements = {}
-var gpas = {}
-var L_O_S = {}
-var Locations = {}
-var Citizenships = {}
-var Endorsement = {}
 const completeFellowshipList = fellowships_json_data;
 const requirementList = requirements_json_data;
 const element = document.getElementsByTagName('h1');
@@ -38,52 +33,6 @@ async function createFilter(){
         })
       })
   }
-  // mapping for gpas of all fellowships to ease filtering
-  // puts all the gpas into an array for easier comparisons
-   gpas = $.map(completeFellowshipList, function(item){
-    if(!item.gpa){ // if gpa is null just set it to 0
-      item.gpa = 0.0
-    }
-     return item.gpa
-   })
-
-   // maps all of the levels of study for each fellowship
-   L_O_S = $.map(completeFellowshipList, function(item){
-     // if it contains under, assume it is undergrad and assign 0
-     if(item.level_of_study.toLowerCase().match("under")){
-       return 0
-     } else {
-       // otherwise assume graduate and assign 1
-       return 1
-     }
-   })
-   
-   //location of study domestic 0, otherwise 1
-   Locations = $.map(completeFellowshipList, function(item){
-     if(item.location_of_study.toLowerCase().match("domestic")){
-       return 0
-     } else {
-       return 1
-     }
-   })
-   
-   //citizenship requirement Y/N
-   Citizenships = $.map(completeFellowshipList, function(item){
-     if(item.citizenship.toLowerCase().match("yes")){
-       return "yes"
-     } else {
-       return "no"
-     }
-   })
-
-   //requires campus endorsement Y/N
-   Endorsement = $.map(completeFellowshipList, function(item){
-     if(item.requires_campus_endorsement_nomination.toLowerCase().match("yes")){
-       return "yes"
-     } else {
-       return "no"
-     }
-   })
    /*
    * Colton Stone, 4/22/2022
    * All of the following code is used to allow the radio boxed to filter together.
