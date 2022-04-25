@@ -26,10 +26,6 @@ function search_fellowship(){
         }
     }
 }
-/*
-* Checks for if/when the 'X' in the search bar is clicked
-* if it is clicked then re-display all of the items of the accordion
-*/
 
 if(input){
     document.getElementById("txt-search").addEventListener("search", function(event) {
