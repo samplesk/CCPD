@@ -162,7 +162,6 @@ async function createFilter(){
   }
   // give each radio button an event listener
   radioButtons.forEach(radioButton => radioButton.addEventListener('change',applyFilter));
-  applyFilter();
 }
 
   /*
