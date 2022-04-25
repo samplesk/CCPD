@@ -24,8 +24,9 @@
 
     /**
      * Andres Orozco
-     * "fellowships_json_data" is now created and we need to populate it with the contents of "FJSON", which we now have ready to use. This code makes
-     * sure everything in FJSON is in fellowships_json_data. That is, we have loaded the fellowship information correctly and now will use it.
+     * "fellowships_json_data" is now created and we need to populate it with the contents of "FJSON", which we now have ready to use.
+     * This code makes sure everything in FJSON is in fellowships_json_data. That is, we have loaded the fellowship information
+     * correctly and now will use it.
      */
     for (let i = 0; i < FJSON["Sheet1"].length; i++) {
       fellowships_json_data[i] = FJSON["Sheet1"][i]
