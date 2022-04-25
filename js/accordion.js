@@ -1,10 +1,3 @@
-/**
- * Andres Orozco
- * This is pretty much the entire thing in an async function. The problem I was facing was that the entire program was completing
- * before the fetch statement had a chance to load eveything. The solution is to put everything in an async function so "await"
- * basically halts everything, which is what we want to do. We WANT the entire program to wait until the JSON information
- * is loaded and usable before creating the fellowships accordion.
- */
  async function createAccordion() {
 
   /**
@@ -17,7 +10,8 @@
    var hashFellowship = firstURL.substring(indexOfFragID+1)
    var hashMinusSpaces = hashFellowship.replaceAll("%20", " ")
 
-  /*creates fellowship dictionary with each fellowship name 
+  /*Lexi Medina:
+  creates fellowship dictionary with each fellowship name 
   as the key and then attaches the fellowship 
   information to each fellowship name (like a hash table)
   Does NOT display on page
@@ -39,7 +33,8 @@
     fellowship_ids_reversed[item.fellowship_id] = item.name
     })
 
- /*Dictionaries that contain all fellowship keys, 
+ /* Lexi Medina:
+ Dictionaries that contain all fellowship keys, 
  and the name you actually want it to be labeled as on the web page
  Different dictionaries will be used in different quadrants in format method.
   */
@@ -66,7 +61,8 @@
     "other" : "Other Details/Requirements"
   }
   
-  /*creates outer accordion layer:
+  /*Lexi Medina:
+    creates outer accordion layer:
     creates an expandable drop down object for each fellowship.
     content inside each fellowship object is still empty at this point.
     Does display on page
@@ -80,7 +76,8 @@
 
 
   
-  /*Creates inner accordion layer:
+  /*Lexi Medina:
+  Creates inner accordion layer:
   seperates the inner accordion layer into different rows/columns
   depending on the type of content that needs to be displayed in that specific quadrant
   */
@@ -105,7 +102,8 @@
     return formatted_item
   }
   
-  /*Fills inner accordion layer:
+  /*Lexi Medina: 
+    Fills inner accordion layer:
     grabs the content for each fellowship from the fellowship 
     hashtable and adds it into the empty fellowship content object.
     content inside each fellowship object is no longer empty at this point.
@@ -129,7 +127,8 @@
     }).join("")
     }
 
-  /*Attaches outer and inner layer to each other to create complete accordion object.
+  /*Lexi Medina:
+  Attaches outer and inner layer to each other to create complete accordion object.
   Places accordion object to fellowship-accordion div placeholder from search-page.html.
   */
  // USED: https://jqueryui.com/accordion/ for accordion functions/interactions
