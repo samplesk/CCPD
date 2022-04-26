@@ -26,7 +26,7 @@
 }
 
 h2 { /*Search fellowships*/
-  font-size: 24px;
+  font-size: 22px;
   font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
   font-weight: 400;
   padding-left: 20px;
@@ -54,7 +54,7 @@ h2 { /*Search fellowships*/
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .collapsible:hover {
