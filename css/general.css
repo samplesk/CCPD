@@ -75,6 +75,7 @@ sub- or category-headlines. */
     font-weight: 700;
     color: #000000;
     margin-bottom: 0px;
+    margin-top: 16px;
   }
 
   h5{ /*Details, Requirements*/
@@ -84,7 +85,8 @@ sub- or category-headlines. */
     color: #000000;
     text-align: left;
     text-decoration: underline;
-    text-decoration-thickness: 1px;
+    margin-bottom: 30px;
+    margin-top: 30px;
   }
 
   /* Search box*/
