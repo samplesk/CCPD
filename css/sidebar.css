@@ -12,6 +12,7 @@
   padding-top: 0px;
 }
 
+/**/
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -21,9 +22,11 @@
   transition: 0.3s;
 }
 
+/*
 .sidebar a:hover {
   color: #f1f1f1;
 }
+*/
 
 h2 { /*Search fellowships, search box*/
   font-size: 22px;
@@ -35,6 +38,7 @@ h2 { /*Search fellowships, search box*/
   display: inline-block;
 }
 
+/**/
 #main {
   margin-left: 250px;
   padding: 16px;
@@ -59,13 +63,17 @@ h2 { /*Search fellowships, search box*/
   font-size: 16px;
 }
 
+/*turns each filter box yellow when you hover*/
 .collapsible:hover {
   background-color: #FFCD00;
 }
+
+/*turn the filter box darker gray upon click*/
 .active {
   background-color: #b9b4b481;
 }
 
+/*+ button on the right side of the sidebar*/
 .collapsible:after {
   content: '\002B';
   color: black;
@@ -74,10 +82,12 @@ h2 { /*Search fellowships, search box*/
   margin-left: 5px;
 }
 
+/*- button on the right side of the sidebar*/
 .active:after {
   content: "\2212";
 }
 
+/*piece that opens up with filtering options*/
 .content {
   padding: 0 18px;
   max-height: 0;
@@ -87,6 +97,7 @@ h2 { /*Search fellowships, search box*/
   color: black;
 }
 
+/*SU icon at bottom of sidebar*/
 .icon-div {
   height: 150px;
   display: flex;
@@ -94,6 +105,7 @@ h2 { /*Search fellowships, search box*/
   justify-content: center;
 }
 
+/*
 .tooltip {
   position: relative;
   display: inline-block;
@@ -108,7 +120,9 @@ h2 { /*Search fellowships, search box*/
   border-radius: 6px;
   padding: 5px 0;
   font-size: small;
-  /* Position the tooltip */
+
+/* Position the tooltip */
+/*
   position: absolute;
   z-index: 1;
   top: -5px;
@@ -118,3 +132,4 @@ h2 { /*Search fellowships, search box*/
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+*/

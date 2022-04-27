@@ -1,4 +1,4 @@
-* {
+* { /*for all elements of the accordion*/
     box-sizing: border-box;
   }
   
@@ -23,6 +23,7 @@
     }
   }
 
+  /*max height of the open accordion*/
   #fellowship-accordion .ui-accordion-content {
     max-height: 550px;
   }
