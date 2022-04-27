@@ -1,5 +1,4 @@
 //https://jsfiddle.net/6wYzw/41/
-//https://stackoverflow.com/questions/8796472/filtering-with-checkboxes-using-jquery
 var requirements = {}
 const completeFellowshipList = fellowships_json_data;
 const requirementList = requirements_json_data;
@@ -7,47 +6,49 @@ const element = document.getElementsByTagName('h1');
 async function createFilter(){
 
 
-  /*creates fellowship dictionary with each fellowship name 
-  as the key and then attaches the fellowship 
-  information to each fellowship name (like a hash table)
-  Does NOT display on page
-  */
-  requirements_json_data.forEach(function(item) {
-  if(!(item.name in requirements)){
-    requirements[item.name] = [item] // adds new fellowship name to array
-  }
-  else
-    requirements[item.name].push(item) // adds the information for that fellowship
-  })
+  // /*
+  // * creates fellowship dictionary with each fellowship name
+  // * as the key and then attaches the fellowship
+  // * information to each fellowship name (like a hash table)
+  // * Does NOT display on page
+  // */
+  // requirements_json_data.forEach(function(item) {
+  // if(!(item.name in requirements)){
+  //   requirements[item.name] = [item] // adds new fellowship name to array
+  // }
+  // else
+  //   requirements[item.name].push(item) // adds the information for that fellowship
+  // })
 
-  cleanRequirements();
-  function cleanRequirements(){
-    var html = $.map(requirements, function(body, fellowship) {
-      return $.map(body, function(item, i) {
-            return $.map(item, function(line, key){
-                if(line != null && typeof line === 'string'){
-                  line = line.toLowerCase();
-                }
-                return 
-            })
-        })
-      })
-  }
+  // cleanRequirements();
+  // function cleanRequirements(){
+  //   var html = $.map(requirements, function(body, fellowship) {
+  //     return $.map(body, function(item, i) {
+  //           return $.map(item, function(line, key){
+  //               if(line != null && typeof line === 'string'){
+  //                 line = line.toLowerCase();
+  //               }
+  //               return
+  //           })
+  //       })
+  //     })
+  // }
+
    /*
    * Colton Stone, 4/22/2022
-   * All of the following code is used to allow the radio boxed to filter together.
+   * All of the following code is used to allow the radio boxes to filter together.
    */
-  const accord = document.querySelectorAll('#fellowship-accordion')
+  // const accord = document.querySelectorAll('#fellowship-accordion')
   const radioButtons = Array.prototype.slice.call(document.querySelectorAll("input[type='radio']"))
   /*
   * This function is what does the filtering. It takes each radio button then
-  * gets its label/name and value. Using this we store the button if it is checked, 
+  * gets its label/name and value. Using this we store the button if it is checked,
   * Next we make arrays of the fellowship requirements and their corresponding values
-  * we loop through the whole list of fellowships, and for each fellowship we check 
+  * we loop through the whole list of fellowships, and for each fellowship we check
   * all of its requirements. For all of the requirements we check to see if there is
-  * a checkbox that matches a requirement. If one is found we make sure that the values are 
+  * a checkbox that matches a requirement. If one is found we make sure that the values are
   * appropriate and that it is the correct requirement. Then we push the fellowship index
-  * into an array that will be used to hide items accordingly. 
+  * into an array that will be used to hide items accordingly.
   */
   const applyFilter = () => {
     // get current checked buttons
@@ -70,7 +71,7 @@ async function createFilter(){
     for(let i = 0; i < completeFellowshipList.length; i++){
       // and all of the requirements in each fellowship
       for(let j = 0; j < fellowship_list_keys[i].length; j++){
-        // see if any of the buttons match a requirement
+        // for each button pressed
         for( let k  = 0; k < checkArr.length;k++){
           // if it matches check the type of data it is
           if(fellowship_list_keys[i][j].includes(checkArr[k].button)){
@@ -115,7 +116,7 @@ async function createFilter(){
 
   /*
   * Good to call before doing any sort of searching/filtering
-  * sets the accordion to non-active everywhere so that no secitons 
+  * sets the accordion to non-active everywhere so that no secitons
   * of the accordion are left open to bug out
   */
   function set_accordion_inactive(){
