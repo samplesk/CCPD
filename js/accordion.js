@@ -203,7 +203,6 @@
 
 
   setTimeout(() => {
-    // console.log("Delayed for 1 second.");
     
     fellowshipElement.scrollIntoView()
   }, "50")
