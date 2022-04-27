@@ -22,6 +22,7 @@
       width: 100%;
     }
   }
+
   #fellowship-accordion .ui-accordion-content {
     max-height: 550px;
-}
+  }

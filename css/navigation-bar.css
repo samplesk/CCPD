@@ -1,6 +1,5 @@
 /*Horizontal Navigation Bar */
-
-ul {
+ul { /*top black bar*/
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -8,7 +7,8 @@ ul {
   background-color: #111;
 }
 
-.user-manual-bar {
+/*top yellow bar on about page for user manual*/
+.user-manual-bar { 
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -16,10 +16,12 @@ ul {
   background-color: #FFCD00;
 }
 
+/*tells each piece to stay left aligned*/
 li {
   float: left;
 }
 
+/*the box around the text of each header piece*/
 li a {
   display: block;
   color: white;
@@ -28,11 +30,15 @@ li a {
   text-decoration: none;
 }
 
+/*when the mouse hovers on an option in the 
+  top nav bar it turn this gray*/
 li a:hover {
   background-color: #828282;
 }
 
-a{ /*Browse Fellowships, CCPD Fellowship Site, About as well as Visit link*/
+ /*Browse Fellowships, CCPD Fellowship Site, 
+    About as well as Visit link*/
+a{
   font-size: 18px;
   font-family: "HK Grotesk",Arial,sans-serif;
   font-weight: 400;

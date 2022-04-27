@@ -25,10 +25,12 @@
   color: #f1f1f1;
 }
 
-h2 { /*Search fellowships*/
+h2 { /*Search fellowships, search box*/
   font-size: 22px;
   font-family: "PlayfairDisplay-Regular","Times New Roman",serif;
   font-weight: 400;
+  text-align: left;
+  margin-left: 0px;
   padding-left: 20px;
   display: inline-block;
 }
