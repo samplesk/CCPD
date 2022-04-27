@@ -26,7 +26,11 @@ function search_fellowship(){
         }
     }
 }
-
+/*
+* Checks to see if the X at the end of the search bar was clicked
+* if it was then we set all of the accordion items to display
+* since the X being clicked would mean the search bar would be empty
+*/
 if(input){
     document.getElementById("txt-search").addEventListener("search", function(event) {
         for(var i=0; i< fellowshipList.length; i++){ // loop through all of the accordion items

@@ -28,6 +28,7 @@
      * This code makes sure everything in FJSON is in fellowships_json_data. That is, we have loaded the fellowship information
      * correctly and now will use it.
      */
+    // This code was edited by Lexi, but quite similar
     for (let i = 0; i < FJSON["Sheet1"].length; i++) {
       fellowships_json_data[i] = FJSON["Sheet1"][i]
     }

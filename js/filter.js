@@ -5,7 +5,6 @@ const requirementList = requirements_json_data;
 const element = document.getElementsByTagName('h1');
 async function createFilter(){
 
-
   // /*
   // * creates fellowship dictionary with each fellowship name
   // * as the key and then attaches the fellowship
@@ -38,7 +37,6 @@ async function createFilter(){
    * Colton Stone, 4/22/2022
    * All of the following code is used to allow the radio boxes to filter together.
    */
-  // const accord = document.querySelectorAll('#fellowship-accordion')
   const radioButtons = Array.prototype.slice.call(document.querySelectorAll("input[type='radio']"))
   /*
   * This function is what does the filtering. It takes each radio button then
